@@ -1,0 +1,849 @@
+/*
+Theme Name: vxsx
+Theme URI: http://vxsx.ru
+Description: That's for me, beyatch, don't touch
+Version: 0.1
+Author: Vadim Sikora
+Author URI: http://vxsx.ru/
+Tags: two-column
+*/
+
+html, body, div, span, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+abbr, address, cite, code,
+del, dfn, em, img, ins, kbd, q, samp,
+small, strong, sub, sup, var,
+b, i,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, figure, footer, header, 
+hgroup, menu, nav, section, menu,
+time, mark, audio, video {
+  margin:0;
+  padding:0;
+  border:0;
+  outline:0;
+  font-size:100%;
+  vertical-align:baseline;
+  background:transparent;
+}                  
+
+html { height: 100% }
+article, aside, figure, footer, header, 
+hgroup, nav, section { display:block; }
+
+nav ul { list-style:none; }
+
+table { border-collapse:collapse; border-spacing:0; }
+
+input, select { vertical-align:top; }
+
+pre, code { font-family: Consolas, Monaco, monospace, sans-serif; }
+ 
+body {
+	font:62.5%/1 Helvetica, Arial, sans-serif;
+	height:100%;
+	position: relative;
+	vertical-align: top;
+	color: #444;
+}
+
+h1,h2,h3,h4,h5,h6 { text-rendering: optimizeLegibility; }
+
+/* maxvoltar.com/archive/-webkit-font-smoothing */
+html { -webkit-font-smoothing: antialiased; }
+
+a:hover, a:active { outline: none; }
+
+a, a:active, a:visited { color:#036; }
+a:hover { color:#607890; }
+
+a.pseudo-link, a.pseudo-link:active, a.pseudo-link:visited {border-bottom: 1px dashed #036;}
+a.pseudo-link:hover { border-bottom: 1px dashed #607890; }
+
+/* align checkboxes, radios, text inputs with their label
+   by: Thierry Koblentz tjkdesign.com/ez-css/css/base.css  */
+input[type="radio"] { vertical-align: text-bottom; }
+input[type="checkbox"] { vertical-align: top; *vertical-align: baseline; }
+/* .ie6 input { vertical-align: text-bottom; } */
+
+/* hand cursor on clickable input elements */
+label, input[type=button], input[type=submit], button { cursor: pointer; }
+
+::-moz-selection{ background: #65bdfb; color:#fff; text-shadow: none; } 
+::selection { background:#65bdfb; color:#fff; text-shadow: none; } 
+a::selection { color: #0f77c6; }
+a::-moz-selection { color: #0f77c6; }
+/*  j.mp/webkit-tap-highlight-color */
+a { -webkit-tap-highlight-color: #65bdfb; } 
+/* make buttons play nice in IE:    
+   www.viget.com/inspire/styling-the-button-element-in-internet-explorer/ */
+button {  width: auto; overflow: visible; }
+ 
+/* bicubic resizing for non-native sized IMG: 
+   code.flickr.com/blog/2008/11/12/on-ui-quality-the-little-things-client-side-image-resizing/ */
+.ie7 img { -ms-interpolation-mode: bicubic; }
+
+
+.clearfix:after { content: "."; display: block; height: 0; clear: both; visibility: hidden; }
+.clearfix { display: inline-block; }
+* html .clearfix { height: 1%; } /* Hides from IE-mac \*/
+.clearfix { display: block; }
+
+
+
+.vxsx {
+    width:100%;
+	min-height:100%;
+    height: auto !important;
+    height:100%;
+
+}
+
+.blog-header {
+	padding: 30px 35% 30px 5%;
+	font-size: 1.3em;
+}
+
+.blog-header a:link
+ , .blog-header a:hover
+ , .blog-header a:active
+ , .blog-header a:visited
+ {
+	text-decoration: none;
+	color: #444;
+}
+.blog-posts {
+	width: 90%;
+	margin: 0 auto;
+	position: relative;
+ 	padding-bottom:120px;
+	
+}
+
+	.blog-posts .posts {
+		position: relative;
+		top: 0;
+		width: 70%;
+	}
+
+figure { margin-bottom: 1em; }
+figure img { display: block; }
+figure.fluid {width: 100%;margin-bottom: 1em;}
+figure.fluid img {width: 100%;}
+figcaption {padding-left: 2em;font-size: 0.8em;}
+
+
+
+.blog-posts aside {
+	float: right;
+	width: 20%;
+	font-size: 1.4em;
+	line-height: 150%;
+	padding-bottom: 2em;
+}
+
+	.blog-posts aside img {
+		width: 100%;
+		display: block;
+	}
+	
+	.blog-posts aside .copy {
+		text-align: right;
+		font-size: 0.8em;
+	}
+
+		.blog-posts aside .copy a {
+			text-decoration: none;
+		}
+
+	.blog-posts .blog-post {
+		position: relative;
+		font-size: 1.4em;
+		line-height: 150%;
+		margin-bottom: 6em;
+	}
+		
+		.blog-posts .blog-post header {
+			margin-bottom: 1em;
+		}
+			
+			.blog-posts .blog-post header h2 {
+				font-weight: normal;
+				font-size: 2em;
+				line-height: 120%;
+				padding-bottom: 0;
+			}
+				.blog-posts .blog-post header h2 a {
+/* 					color: black; */
+					text-decoration: none;
+				}		
+				.blog-posts .blog-post header h2 a:hover {
+/* 					text-decoration: underline; */
+				}
+			.blog-posts .blog-post header time {		
+				color: #444;
+				font-size: 0.8em;
+			}
+			
+			.blog-posts .blog-post footer {
+				margin-top: 2em;
+				font-size: 0.8em;
+				line-height: 21px;
+				overflow: hidden;
+			}
+			.ie6 .blog-posts .blog-post footer 
+			, .ie7 .blog-posts .blog-post footer 
+			{
+				zoom: 1;
+			}
+			
+				.blog-posts .blog-post footer p.comments a {
+					text-decoration: none;
+					color: #444;
+				}
+				.blog-posts .blog-post footer p.comments a:hover {			
+					color: #000;
+				}
+				.blog-posts .blog-post footer p {
+					float: left;
+					padding-bottom: 0;
+				}
+
+					.blog-posts .blog-post p {
+						padding-bottom: 1em;
+					}
+					
+					.blog-posts .blog-post h2 {
+						font-weight: normal;
+						font-size: 1.4em;
+						padding-bottom: 0.8em;
+					}
+	
+					pre {
+						background: #eee;
+						counter-reset: code 0;
+						margin: 0 0 1em -1em;
+						padding: 1em 0;
+						white-space: normal;
+					}
+
+					blockquote {
+						background: #eee;
+
+						margin: 0 0 1em -1em;
+						padding: 1em 1em 1em 4em;
+						white-space: normal;
+					}
+					
+					blockquote p {
+						padding: 0 !important;
+					}
+					
+					blockquote p:before {
+						position:absolute;
+						margin:-0.4em 0 0 -0.6em;
+						color:#444;
+						content:'\201E'; /* &bdquo; */
+						font-size: 4em;
+					}
+					
+					q {
+						font-style: italic;
+					}
+					
+						code {
+							background: #eee;
+							padding: 0.1em 0.4em;
+						}
+						
+						pre code {
+							padding: 0;
+							display: block;
+							white-space: pre-wrap; /* CSS 2.1 */
+							padding: 0em 1em 0em 4em;
+							font-size: 0.8em;
+						}
+
+						pre code:hover {
+							background-color: #ccc;
+						}
+						
+						pre code:before {
+					        position:absolute;
+					        margin-left:-3.5em;
+					        color:#444;
+					        font-size: 0.8em;
+					        counter-increment:code;
+					        content:counter(code,decimal-leading-zero)'.';
+				        }
+					
+					.blog-posts .blog-post footer .social-buttons {
+						float: left; /* right */
+						margin-left: 4em;
+					}
+					
+					.blog-posts .blog-post footer .social-buttons .facebook {
+						border:none; overflow:hidden; width:100px; height:21px;
+					}
+					
+					.ie6 .blog-posts .blog-post footer .social-buttons .facebook 
+					, .ie7 .blog-posts .blog-post footer .social-buttons .facebook 
+					{
+						zoom: 1;
+					}
+	
+	.blog-posts .blog-post aside {
+		position: absolute;
+		left: 116%;
+	}
+	
+	#comments {
+		margin-bottom: 3em;	
+		position: relative;
+	}
+		#comments .comments-wrap {
+			float: left;
+			width: 58%;
+		}
+		#comments .comments {
+			border-top: 1px dashed #CCC;
+			float: left;
+			font-size: 1.4em;
+			margin-top: 1em;
+			padding-top: 1em;
+			width: 100%;
+		}
+		
+
+					#comments .comments pre {
+						padding: 1em;
+						margin-left: 0em;
+					}
+					
+						#comments .comments	pre code:before {
+							content:'';
+						}
+
+		#comments .comments blockquote {
+			margin-left: 0em;
+		}
+		#comments .comments blockquote {
+			margin: 0 0 1em 0em;
+			padding: 1em;
+		}
+
+		#comments .comments p {
+			margin-bottom: 1em;
+		}
+		#comments .comments blockquote p {
+			padding: 0 !important;
+		}
+		#comments .comments	blockquote p:before {
+			content:''; 
+		}
+		
+				
+		h2.comments {
+			font-size: 2em;
+		}
+			#comments .comments footer {
+				width:23%;
+				float: left;
+				clear: left;
+/* 				margin-top: 2em; */
+				line-height: 120%;
+				
+			}
+			
+			#comments .comments div {
+				/* width: 75%; */
+				margin-left: 25%;
+				/* margin-top: 2em; */
+				position: relative;
+				line-height: 120%;
+			}			
+			
+
+
+			.ie6 #comments .comments div 
+			, .ie7 #comments .comments div {
+				zoom: 1;
+			}
+			
+		#comments aside {
+			width: 40%;
+			position: relative;
+			top:0;
+			right: 0;
+		}	
+			#comments aside .subscribe {
+				margin: 1em 0;
+			}	
+			
+			#comments aside .rules	{
+				font-size: 0.8em;
+				margin: 2em 0 2em;
+			}
+			#comments aside textarea {
+				resize: none;
+				height: 200px;
+				margin-bottom: 1em;
+				width:97%;
+				outline-color: #65bdfb;
+			}
+			
+			#comments aside input.text-input {
+				width: 60%;
+				margin-bottom: 1em;
+				outline-color: #65bdfb;
+			}
+			#comments aside .details label {
+				line-height: 160%;
+			}	
+	
+.blog-footer {
+    height:120px;
+	width:100%;
+   	color: white;
+    background-color: #444;
+    margin-top:-120px;
+	padding-bottom: 0;
+}
+	.blog-footer p {
+		font-size: 1.4em;
+		padding: 20px 5% 0;
+	}
+	
+	.nocomments 
+	, .nevercomments
+	{
+		margin: 1em 0;
+		font-size: 1.4em;
+		float:left;
+		width: 58%;
+	}
+
+	.nocomments:after {
+		content: ' \2192'
+	}
+
+.timeline-page dl {line-height: 120%;margin-bottom: 1em;}
+.timeline-page dt:first-child  { margin-top: 0; }
+.timeline-page dt {
+	margin-top: 0.5em;
+	margin-left: 1.5em;
+	font-weight: bold;
+
+}
+.timeline-page dt:before {
+	content: '\2014';
+	position: absolute;
+	margin-left: -1.5em;
+}
+.timeline-page dd {
+	margin-left: 1.5em;
+}
+				
+.big-title { font-size: 4em; margin-bottom: 0.5em;margin-top: -0.5em; }
+
+/* twtr wdgt */
+#last-tweet {
+	margin-top: 2em;
+	margin-left: -1em;
+	position: relative;
+	background: #444;
+	padding: 1em 0;
+	-webkit-border-radius: 3px;
+	   -moz-border-radius: 3px;
+			border-radius: 3px;
+	zoom: 1;
+	
+	font-family: 'lucida grande', lucida, tahoma, helvetica, arial, sans-serif !important;
+	font-size: 12px !important;
+	color: white;
+}
+#last-tweet .tweet {
+	padding:0 1em;
+	line-height: 120%;
+	overflow: hidden;
+}
+#last-tweet .tweet a {
+	color: white;
+	font-weight: bold;
+	text-decoration: none;
+}
+#last-tweet .tweet a:hover {
+	text-decoration: underline;
+}
+.ie6 #last-tweet .tweet {
+	zoom: 1;
+}
+
+	#last-tweet .arrow {
+		vertical-align: top;
+		width: 0px;
+		height: 0px !important;
+		border-bottom: 10px solid transparent;
+		border-left:   10px solid transparent;
+		border-right:  10px solid #444;
+		border-top:    10px solid #444;
+		position: absolute;
+		top:100%;
+		left: 2em;
+		overflow:hidden;
+	}
+	.ie6 #last-tweet .arrow 
+	, .ie7 #last-tweet .arrow {
+		border-bottom: 10px solid white;
+		border-left:   10px solid white;
+		zoom: 1;
+	}
+	
+		#last-tweet .username {
+			position: absolute;
+			left: 3.5em;
+			bottom: -1.5em;
+		}
+		#last-tweet p {
+			padding-bottom: 0.5em;
+		}
+		#last-tweet time {
+			font-size: 0.8em;
+		}
+		
+		
+.error-page {
+	font-size: 10em;
+	line-height: 1em;
+}
+
+/*/////////////////// timeline styles   */
+	.timeline-wrap {
+			border: 10px solid #ccc;
+			height: 280px;
+ 			overflow: hidden; 
+			position: relative;
+			z-index: 101;
+		}		
+		.time { 
+			list-style-type:none; 
+			background: url(/wp-content/themes/vxsx/i/timeline-bg.gif) repeat 0 0; 
+			width: 2540px; /* seven years + delta 2540-360 */
+			position: absolute; 
+			cursor: pointer;
+			z-index: 1;
+		}
+		.time li{
+			display:inline-block;
+			width: 360px;
+			height: 280px;
+			vertical-align: bottom;
+			position: relative;
+		}
+		.time li span {
+			position: absolute;
+			top: 100%;
+			margin-top: -1.4em;
+  			padding: 0.1em 0.5em; 
+			font-size: 2em;
+			color: white;
+			background: #65bdfb;
+		}
+		.event {
+			position: absolute;
+			outline: none;	
+			line-height: 40px;
+			text-align: center;
+			background-color: #eee;
+			-webkit-box-shadow: black 0px 0px 5px;
+			-moz-box-shadow: black 0px 0px 5px;
+			box-shadow: black 0px 0px 5px;
+			border: 1px solid white;
+			background:-webkit-gradient(
+				linear,
+				left bottom,
+				left top,
+				color-stop(0.27, rgb(194,194,194)),
+				color-stop(0.67, rgb(238,238,238))
+			);
+			background:-moz-linear-gradient(
+				center bottom,
+				rgb(194,194,194) 27%,
+				rgb(238,238,238) 67%
+			);
+			-moz-border-radius: 10px;
+			-webkit-border-radius: 10px;
+			border-radius: 10px;
+			color: #444;
+			font-size: 1.6em;
+			text-decoration: none;
+			padding: 10px;
+			display: block;
+			z-index: 100;
+			text-shadow: 1px 1px 0px rgba(255,255,255,0.5);
+			/*-webkit-transition: 0.5s linear all; */
+		}
+		.still {
+			-moz-border-radius-topright: 0px;
+			-webkit-border-top-right-radius: 0px;
+			-moz-border-radius-bottomright: 0px;
+			-webkit-border-bottom-right-radius: 0px;
+			border-top-right-radius: 0px;
+			border-bottom-right-radius: 0px;
+		}
+		.event:hover 
+		, .event.active
+		{
+			background: #65bdfb;
+			background: -webkit-gradient(
+				linear,
+				left bottom,
+				left top,
+				color-stop(0.27, rgb(81,149,194)),
+				color-stop(0.67, rgb(101,189,251))
+			);
+			background:	-moz-linear-gradient(
+				center bottom,
+				rgb(81,149,194) 27%,
+				rgb(101,189,251) 67%
+			);
+			color: white;
+			text-shadow: -1px -1px 0px #808080; /* #44A1BD;*/
+		}
+		
+		.ie8 .event {
+			filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f1f1f1', endColorstr='#c2c2c2');
+		}
+		.ie8 .event:hover
+		, .ie8 .event.active
+		{
+			filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#65bdfb', endColorstr='#5195c2');
+		}
+		
+		
+		.opera .event { /* that's some bullshit i guess */
+			background:url('/wp-content/themes/vxsx/i/gr.svg') no-repeat 0px 0;
+		}
+		
+		.opera .event:hover 
+		, .opera .event.active
+		{
+			background:url('/wp-content/themes/vxsx/i/act_gr.svg') no-repeat 0 0px;
+		}
+		.event i {
+			position: absolute;
+			width: 16px;
+			height: 69px;
+			top:-4px;
+			right: -16px;
+			background: url('/wp-content/themes/vxsx/i/edge.png')
+		}
+		.event:hover i
+		, .event.active i
+		{
+			background: url('/wp-content/themes/vxsx/i/active_edge.png')
+		}
+		
+	/*  .months-1 	{ width: 520px;	}
+		.months-2 	{ width: 520px;	} don't actually need them, too small
+		.months-3 	{ width: 520px;	} but can use text-overflow: ellipsis
+		.months-4 	{ width: 520px;	} */
+		.months-5 	{ width: 130px;	} 
+		.months-6 	{ width: 160px;	} 
+		.months-7 	{ width: 190px;	}
+		.months-8 	{ width: 220px;	}
+		.months-9 	{ width: 250px;	}
+		.months-10 	{ width: 280px;	}
+		.months-11 	{ width: 310px;	}
+		.months-12 	{ width: 340px;	}
+		.months-13 	{ width: 370px;	}
+		.months-14 	{ width: 400px;	}
+		.months-15 	{ width: 430px;	}
+		.months-16 	{ width: 460px;	}
+		.months-17 	{ width: 490px;	}
+		.months-18 	{ width: 520px;	} /* true 540-20 = 18 * 30 -20 (padding)  */
+		.months-19 	{ width: 550px;	}
+		.months-20 	{ width: 580px;	}
+		.months-21 	{ width: 610px;	}
+		.months-22 	{ width: 640px;	}
+		.months-23 	{ width: 670px;	}
+		.months-24 	{ width: 700px;	}
+		.months-25 	{ width: 730px;	}
+		.months-26 	{ width: 760px;	}
+		.months-27 	{ width: 790px;	}
+		.months-28 	{ width: 820px;	}
+		.months-29 	{ width: 850px;	}
+		.months-30 	{ width: 880px;	}
+		.months-31 	{ width: 910px;	}
+		.months-32 	{ width: 940px;	}
+		.months-33 	{ width: 970px;	}
+		.months-34 	{ width: 1000px;	}
+		.months-35 	{ width: 1030px;	}
+		.months-36 	{ width: 1060px;	}
+		.months-37 	{ width: 1090px;	}
+		.months-38 	{ width: 1120px;	}
+		.months-39 	{ width: 1150px;	}
+		
+		.january 	{ left: 0; }
+		.february 	{ left: 30px; }
+		.march 		{ left: 60px; }
+		.april 		{ left: 90px; }
+		.may 		{ left: 120px; }
+		.june 		{ left: 150px; }
+		.july 		{ left: 180px; }
+		.august		{ left: 210px; }
+		.september 	{ left: 240px; }
+		.october	{ left: 270px; }
+		.november 	{ left: 300px; }
+		.december	{ left: 330px; }
+		
+		.line-1     { top: 20px;}
+		.line-2     { top: 100px;}
+		.line-3     { top: 180px;}
+	
+
+		.arrow {
+			border-top: 20px solid #ccc; 
+			border-left: 20px solid white;
+			border-right: 20px solid white;
+			position: relative;
+			width: 0;
+			height: 0;
+			overflow: hidden;
+			top: 0;
+			left: 50%;
+			margin-left: -10px;
+		}
+		.about-me {
+			font-size: 1.4em;
+		}
+		.me {
+			float: left;
+			width: 20%;
+		}
+		.timeline-page {
+			margin-left: 25%;
+		}
+		.about-me p {
+			margin-bottom: 1em;
+			line-height: 120%;
+		}
+		.me img {
+			width: 100%;
+			display: block;
+			margin-bottom: 0.5em;
+		}
+		.me figcaption {
+			float: right;
+			font-size: 1em;
+		}
+		.timeline-event-description {
+				margin: 20px 0px 50px;
+				font-size: 1.4em;
+				min-height: 200px;
+				border: 10px solid #ccc;
+			}
+			.page-event {
+				padding: 20px;
+				display: none;
+			}
+			
+				.page-event header { margin-bottom: 0.5em; }
+				.page-event h1 {font-size: 2em; margin-bottom: 0.2em;}
+				.page-event time {font-size: 0.8em; color: #ccc;}
+	
+
+.keyboard-shortcut {
+	line-height: 185%;
+}
+
+
+
+
+
+
+
+
+
+
+/* 
+ * print styles
+ * inlined to avoid required HTTP connection www.phpied.com/delay-loading-your-print-css/ 
+
+@media print {
+  * { background: transparent !important; color: #444 !important; text-shadow: none; }
+
+  a, a:visited { color: #444 !important; text-decoration: underline; }
+
+  a:after { content: " (" attr(href) ")"; } 
+
+  abbr:after { content: " (" attr(title) ")"; }
+  
+  .ir a:after { content: ""; }  / Don't show links for images 
+  
+  pre, blockquote { border: 1px solid #999; page-break-inside: avoid; }
+  
+  img { page-break-inside: avoid; }
+
+  @page { margin: 0.5cm; }
+
+  p, h2, h3 { orphans: 3; widows: 3; }
+
+  h2, h3{ page-break-after: avoid; }
+}
+ */
+
+
+
+@media (max-width:980px) and (orientation:portrait) { //FIXME: для айпада другие медиа кьюерис
+  /* iPad */
+  html { -webkit-text-size-adjust:none; -ms-text-size-adjust:none; } 
+  .blog-header { padding-right: 5%; }
+  .blog-posts .posts {	width: 100%;}
+pre {
+	margin-left: -5.6%;
+	margin-right: -5.6%;
+}
+	.blog-posts aside {	float: none;width: 100%;font-size: 1.4em;line-height: 150%;	padding-bottom: 2em;}
+	#last-tweet { display: none; }
+	.blog-posts .blog-post footer .social-buttons {	margin-left: 0;	float: right;}
+	.blog-posts .blog-post footer .social-buttons iframe {width: 95px;}
+	#respond {top:0 !important;	clear: left;float: none;width: 100% !important;border-top: 1px dashed #ccc;margin-top: 1em;	}
+ 	#comments .comments-wrap {float: left;width: 100%;margin-bottom: 1em;}
+	.nocomments 
+	, .nevercomments
+	{width: 100%;float: none;}
+	.nocomments:after {	content: ' \2193'}
+	.me { display: none; }
+	.timeline-page {margin-left: 0;}
+	.keyboard-shortcut {display:none}
+}
+ 
+ 
+@media screen and (max-device-width: 480px)  {
+  /* iPhone */
+  html { -webkit-text-size-adjust:none; -ms-text-size-adjust:none; } 
+
+pre {
+	margin-left: -5.6%;
+	margin-right: -5.6%;
+}
+  .blog-header { padding-right: 5%; }  
+  .blog-posts .posts {	width: 100%;}
+	.blog-posts aside {	float: none;width: 100%;font-size: 1.4em;line-height: 120%;padding-bottom: 2em;}
+	#last-tweet { display: none; }
+	.blog-posts .blog-post footer .social-buttons {	margin-left: 0;	float: right;}
+	.blog-posts .blog-post footer .social-buttons iframe {width: 95px;}
+ 	#respond {	top:0;clear: left;float: none;width: 100% !important;border-top: 1px dashed #ccc;margin-top: 1em;}
+ 	#comments .comments-wrap {float: left;width: 100%;	margin-bottom: 1em;	}
+	.nocomments 
+	, .nevercomments
+	{	width: 100%;float: none;}
+	.nocomments:after {	content: ' \2193'}
+	.me { display: none; }
+	.timeline-page {margin-left: 0;}
+	.keyboard-shortcut {display:none}
+}
+
