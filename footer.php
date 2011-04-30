@@ -5,18 +5,7 @@
 	<footer class="blog-footer">
 		<p>&copy; 2010 &mdash; 2011, Вадим Сикора </p>
 	</footer>
-
-
-
-
-
-
-<!-- defer? -->
-
-
 <script>var _gaq=[['_setAccount','UA-15927085-2'],['_trackPageview']];(function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];g.async=1;g.src='//www.google-analytics.com/ga.js';s.parentNode.insertBefore(g,s)}(document,'script'))</script>
-<script defer src="http://platform.twitter.com/widgets.js" type="text/javascript"></script>
-<script type="text/javascript" src="/wp-content/themes/vxsx/js/plugins.js"></script>
 <!--[if lt IE 7 ]>
 <script src="/wp-content/themes/vxsx/js/dd_belatedpng.js"></script>
 <script type="text/javascript">DD_belatedPNG.fix('.png');</script>

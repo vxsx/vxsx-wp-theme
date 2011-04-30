@@ -35,5 +35,11 @@
 					return strtr($month_name, $month_name_replace);
 				}
 
+    //Disable wp3.1 admin bar http://wp-snippets.com/disable-wp-3-1-admin-bar/
+    wp_deregister_script('admin-bar');
+    wp_deregister_style('admin-bar');
+    remove_action('wp_footer','wp_admin_bar_render',1000);
 
+    //Disable visual editor http://wp-snippets.com/disable-the-visual-editor/
+    add_filter('user_can_richedit' , create_function('' , 'return false;') , 50);
 ?>

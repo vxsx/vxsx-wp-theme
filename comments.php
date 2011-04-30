@@ -74,10 +74,10 @@ $(function(){
 
 
 	<section id="comments" class="clearfix">
-		<?php if ($comments) : ?>
+		<?php if ($comments) { ?>
 		<section class="comments-wrap">		
 		
-			<?php foreach ($comments as $comment) : ?>
+			<?php foreach ($comments as $comment) { ?>
 			<article class="comments">
 			<footer><?php comment_author_link ()?><br><time style="font-size:0.8em">
 				<?php 
@@ -115,19 +115,19 @@ $(function(){
 				
 			</div>
 			</article>
-			<?php endforeach; ?>
+			<?php } ?>
 		</section>
-		<?php else: ?>
-			<?php if ('open' == $post->comment_status) : ?>
+		<?php  } else { ?>
+			<?php if ('open' == $post->comment_status) { ?>
 				
 				<p class="nocomments">Но вы вполне можете оставить их</p>
-			<?php else : ?>
+			<?php } else { ?>
 				
 				<p class="nevercomments">Комментарииев к данной записи нет и не будет.</p>
-			<?php endif; ?>
-		<?php endif; ?>		
+			<?php } ?>
+		<?php } ?>		
 		
-		<?php if ('open' == $post->comment_status) : ?>
+		<?php if ('open' == $post->comment_status) { ?>
 		<aside id="respond">
 			<form action="<?php echo get_option(’siteurl’); ?>/wp-comments-post.php" method="post" id="commentform">
 				<div class="subscribe">
@@ -144,7 +144,7 @@ $(function(){
 					<textarea name="comment" id="comment-text" required></textarea>
 					
 					<input type="hidden" name="comment_post_ID" value="<?php echo $id; ?>">
-				<?php } else {?>
+				<?php } else { ?>
 					<textarea name="comment" id="comment-text" required></textarea>
 					<input type="hidden" name="comment_post_ID" value="<?php echo $id; ?>">
 				<?php } ?>
@@ -158,5 +158,5 @@ $(function(){
 				<div class="rules">Все что не разрешено - запрещено, а разрешено немного - a, em, strong, blockquote. <!-- А все остальное мне до пизды, потому что я ебал этот ваш водпресс :(--></div>
 			</form>
 		</aside>
-		<?php endif; ?>
+		<?php } ?>
 	</section>

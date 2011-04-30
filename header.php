@@ -8,29 +8,14 @@
 	<meta name='yandex-verification' content='44aad9e75dda00ab' />
 	<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0;">
 	<link rel="shortcut icon" href="/favicon.ico">
-	<link rel="apple-touch-icon" href="/wp-content/themes/vxsx/apple-touch-icon.png">
-<!-- 	<link rel="apple-touch-startup-image" href="/wp-content/themes/vxsx/apple-touch-splash.png"> -->
-	<link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>" type="text/css" media="screen">
-	<!-- <link rel="stylesheet" media="handheld" href="handheld.css"> -->
-	<title><?php 
-			wp_title(); 
-			if (function_exists('is_tag') and is_tag()) 
-			{ 
-				?>Tag Archive for <?php echo $tag; 
-			} 
-			if (is_archive()) { 
-				?> archive<?php 
-			} 
-			elseif (is_search()) 
-			{ 
-				?> Search for <?php echo $s; 
-			} 
-			if ( !(is_404()) and (is_search()) or (is_single()) or (is_page()) or (function_exists('is_tag') and is_tag()) or (is_archive()) ) { ?> на <?php } ?> <?php bloginfo('name'); ?> <?#php bloginfo('description'); ?></title>
-			
-	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.3/jquery.min.js"></script>
-	<!-- <script>!window.jQuery && document.write('<script src="/wp-content/themes/vxsx/js/jquery.js"><\/script>')</script> -->
-	<script src="/wp-content/themes/vxsx/js/modernizr-1.5.min.js"></script>
-
+	<link rel="apple-touch-icon" href="/wordpess/wp-content/themes/vxsx/apple-touch-icon.png">
+    <link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>" type="text/css" media="screen">
+	<title>vxsx.ru</title>
+	<?php //need to install all in one seo pack ?>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script>
+    <script type="text/javascript" src="/wordpress/wp-content/themes/vxsx/js/plugins.js"></script>
+	<script type="text/javascript" src="/wordpress/wp-content/themes/vxsx/js/modernizr-1.5.min.js"></script>
+    <script defer src="http://platform.twitter.com/widgets.js" type="text/javascript"></script>
 	<!-- или просто сделать криейт элемент -->
 	
 	<link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="<?php bloginfo('rss2_url'); ?>" />

@@ -34,7 +34,7 @@
 	<?php endwhile; echo('</section>'); comments_template();  else: ?>
 		<section class="posts">
 			<article class="blog-post">
-				<p class="error-page">404 братка,<br>не там ищешь</p>
+				<p class="error-page">Это не те дроиды,<br>которых ты ищешь</p>
 			</article>
 		</section>
 	<?php endif;?>
