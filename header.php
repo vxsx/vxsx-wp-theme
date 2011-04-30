@@ -1,12 +1,15 @@
 <!DOCTYPE html>
-<html lang="ru-RU">
+<!--[if lt IE 7 ]> <html class="no-js ie6" lang="ru-RU"> <![endif]-->
+<!--[if IE 7 ]>    <html class="no-js ie7" lang="ru-RU"> <![endif]-->
+<!--[if IE 8 ]>    <html class="no-js ie8" lang="ru-RU"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--> <html class="no-js" lang="ru-RU"> <!--<![endif]-->
 	<meta charset="UTF-8">
 	<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	<meta name="description" content="">
 	<meta name="author" content="">
 	<meta name='yandex-verification' content='44aad9e75dda00ab' />
-	<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0;">
+	<meta name="viewport" content="width=device-width; initial-scale=1.0">
 	<link rel="shortcut icon" href="/favicon.ico">
 	<link rel="apple-touch-icon" href="/wordpess/wp-content/themes/vxsx/apple-touch-icon.png">
     <link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>" type="text/css" media="screen">
@@ -26,13 +29,7 @@
 	
 	<?php wp_head ();?>
 </head>
-<!--[if lt IE 7 ]> <body class="ie6"> <![endif]-->
-<!--[if IE 7 ]>    <body class="ie7"> <![endif]-->
-<!--[if IE 8 ]>    <body class="ie8"> <![endif]-->
-<!--[if IE 9 ]>    <body class="ie9"> <![endif]-->
-<!--[if (gt IE 9)|!(IE)]><!--> <body> <!--<![endif]-->
-
-	
+<body>
 	<div class="vxsx">
 		<header class="blog-header">
 			<h1><a href="/">Блог ни о чём</a></h1>
