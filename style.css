@@ -523,6 +523,16 @@ figcaption {padding-left: 2em;font-size: 0.8em;}
 	line-height: 1em;
 }
 
+.laquo { margin-left: -0.44em } 
+.raquo { margin-right: -0.44em } 
+.lbr { margin-left: -0.3em } 
+.rbr { margin-right: -0.3em } 
+.point { margin-right: -0.2em } 
+.ensp { word-spacing: 0.44em } 
+.nbsp { word-spacing: 0.3em } 
+.thinsp { word-spacing: 0.2em }
+
+
 /*/////////////////// timeline styles   */
 	.timeline-wrap {
 			border: 10px solid #ccc;
