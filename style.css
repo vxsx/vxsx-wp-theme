@@ -234,8 +234,8 @@ figcaption {padding-left: 2em;font-size: 0.8em;}
 					blockquote {
 						background: #eee;
 
-						margin: 0 0 1em -1em;
-						padding: 1em 1em 1em 4em;
+						margin: 0 0 1em -11px;
+						padding: 1em 1em 1em 44px;
 						white-space: normal;
 					}
 					
@@ -245,7 +245,7 @@ figcaption {padding-left: 2em;font-size: 0.8em;}
 					
 					blockquote p:before {
 						position:absolute;
-						margin:-0.4em 0 0 -0.6em;
+						margin:-0.35em 0 0 -0.6em;
 						color:#444;
 						content:'\201E'; /* &bdquo; */
 						font-size: 4em;
@@ -260,27 +260,7 @@ figcaption {padding-left: 2em;font-size: 0.8em;}
 							padding: 0.1em 0.4em;
 						}
 						
-						pre code {
-							padding: 0;
-							display: block;
-							white-space: pre-wrap; /* CSS 2.1 */
-							padding: 0em 1em 0em 4em;
-							font-size: 0.8em;
-						}
-
-						pre code:hover {
-							background-color: #ccc;
-						}
-						
-						pre code:before {
-					        position:absolute;
-					        margin-left:-3.5em;
-					        color:#444;
-					        font-size: 0.8em;
-					        counter-increment:code;
-					        content:counter(code,decimal-leading-zero)'.';
-				        }
-					
+											
 					.blog-posts .blog-post footer .social-buttons {
 						float: left; /* right */
 						margin-left: 4em;
@@ -778,6 +758,67 @@ figcaption {padding-left: 2em;font-size: 0.8em;}
 
 
 
+/* prettyprint */
+
+pre {
+    background: #E9E9E9;
+    color: #333;
+    text-shadow: 1px 1px 0 rgba(255, 255, 255, 0.5); 
+    font-family: monaco, consolas, monospace;
+    font-size: 11px; 
+    line-height: 150%;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    border-radius: 2px;
+}
+.linenums {
+    list-style-type: none; /* decimal-leading-zero; */
+    /* list-style-position: inside;*/
+}
+    .linenums li {
+        /* padding-left: 1em;*/
+        padding: 0em 1em 0em 4em;
+    }
+    .linenums li:hover {
+        background-color: #ccc;
+    }
+    .linenums li:before {
+        position:absolute;
+        margin-left:-3.5em;
+        margin-top: 0.2em;
+        color:#444;
+        font-size: 0.8em;
+        counter-increment:code;
+        content:counter(code,decimal-leading-zero)'.';
+    }
+.str, .atv {  color: #005c00; }
+
+.kwd {  color: #00004d; }
+
+.com { 
+    color: #607077;
+    background: rgba(0, 0, 0, 0.05);
+    padding: 1px 3px;
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 2px;
+    -o-border-radius: 2px;
+    -ms-border-radius: 2px;
+    border-radius: 2px;
+    -moz-box-shadow: 1px 1px 0 rgba(0, 0, 0, 0.1), -1px -1px 0 rgba(255, 255, 255, 0.1);
+    -webkit-box-shadow: 1px 1px 0 rgba(0, 0, 0, 0.1), -1px -1px 0 rgba(255, 255, 255, 0.1);
+    -o-box-shadow: 1px 1px 0 rgba(0, 0, 0, 0.1), -1px -1px 0 rgba(255, 255, 255, 0.1);
+    box-shadow: 1px 1px 0 rgba(0, 0, 0, 0.1), -1px -1px 0 rgba(255, 255, 255, 0.1); }
+.typ {  color: #606; }
+.lit {  color: #066; }
+.pun {  color: #660; }
+.pln {  color: #000; }
+.tag {  color: #008; }
+.atn {  color: #606; }
+.dec {  color: #606; }
+
+
+
+
 
 
 
@@ -811,12 +852,12 @@ figcaption {padding-left: 2em;font-size: 0.8em;}
 
 
 
-@media (max-width:980px) and (orientation:portrait) { //FIXME: для айпада другие медиа кьюерис
-  /* iPad */
+@media (max-width:980px) and (orientation:portrait) { 
+    /* iPad */
   html { -webkit-text-size-adjust:none; -ms-text-size-adjust:none; } 
   .blog-header { padding-right: 5%; }
   .blog-posts .posts {	width: 100%;}
-pre {
+pre, blockquote {
 	margin-left: -5.6%;
 	margin-right: -5.6%;
 }
@@ -840,7 +881,7 @@ pre {
   /* iPhone */
   html { -webkit-text-size-adjust:none; -ms-text-size-adjust:none; } 
 
-pre {
+pre, blockquote {
 	margin-left: -5.6%;
 	margin-right: -5.6%;
 }
