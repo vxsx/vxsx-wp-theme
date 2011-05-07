@@ -861,3 +861,12 @@ pre {
 	.keyboard-shortcut {display:none}
 }
 
+
+@media screen and (view-mode:minimized) {
+        body {
+            background: url(/wordpress/wp-content/themes/vxsx/apple-touch-icon.png) no-repeat center center white;
+        }
+        .vxsx {
+            display: none;
+        }
+}

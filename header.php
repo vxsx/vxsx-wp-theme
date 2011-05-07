@@ -11,8 +11,8 @@
 	<meta name='yandex-verification' content='44aad9e75dda00ab' />
 	<meta name="viewport" content="width=device-width; initial-scale=1.0">
 	<link rel="shortcut icon" href="/favicon.ico">
-	<link rel="apple-touch-icon" href="/wordpess/wp-content/themes/vxsx/apple-touch-icon.png">
-    <link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>" type="text/css" media="screen">
+	<link rel="apple-touch-icon" href="/wordpress/wp-content/themes/vxsx/apple-touch-icon.png">
+    <link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>?1" type="text/css" media="screen">
 	<title>vxsx.ru</title>
 	<?php //need to install all in one seo pack ?>
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script>
