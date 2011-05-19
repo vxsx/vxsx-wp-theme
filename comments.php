@@ -17,11 +17,11 @@ var os, k, submit;
 $(function(){
 	
 	updatesubmit = function () {
-      $('[type="submit"]').attr ('disabled', (
+      $('[type="submit"]').attr('disabled', (
         (/^ *$/.test( $('#comment-name').val())  )  ||
         (/^ *$/.test( $('#comment-email').val()) ) ||
         (/^ *$/.test( $('#comment-text').val())  )
-      ) ? 'disabled' : '')
+      ) )
 	}	
   
 	updatesubmit ()
@@ -30,7 +30,7 @@ $(function(){
   
 
 
-	os = $('.keyboard-shortcut').attr('data-os');
+	os = $('.keyboard-shortcut').data('os');
 
 	$('#respond').stickyfloat({position: 'relative', duration: 0});
 	

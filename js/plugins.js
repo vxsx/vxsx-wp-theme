@@ -163,11 +163,12 @@ $(function() {
 
             $('.name').each (function() {
                 var offset = $(this).offset().top;
-                if (offset - 150 > y + window.innerHeight) return false;
+                if (offset > y + window.innerHeight) return false;
                 title = $('a', this).text();
-                if (offset - 150 > y) return false;
-                if (title) { document.title = title + ' | vxsx.ru' }
+                if (offset > y) return false;
             })
+
+            if (title) { document.title = title + ' | vxsx.ru' }
         })
     }
 })
