@@ -438,8 +438,6 @@ $(function() {
         }
      })
 
-     console.log('1')
-	
 })
 
 prettyPrint();
