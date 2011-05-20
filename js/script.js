@@ -1,5 +1,4 @@
-//jquery.stickyfloat
-$.fn.stickyfloat=function(a,b){var c=this,d=parseInt(c.parent().css("padding-top")),e=c.parent().offset().top,f="relative",g=$.extend({startOffset:e,offsetY:d,duration:200,lockBottom:!0},a);c.css({position:f});if(g.lockBottom){var h=c.parent().height()-c.height()+d;h<0&&(h=0)}$(window).scroll(function(){c.stop();var a=$(document).scrollTop()>g.startOffset,b=c.offset().top>e,f=c.outerHeight()<$(window).height();if((a||b)&&f){var i=$(document).scrollTop()-e+g.offsetY;i>h&&(i=h),$(document).scrollTop()<g.startOffset&&(i=d),c.animate({top:i},g.duration)}})}
+//==================================== PLUGINS ===============================================
 
 /**
  * Dragdealer JS v0.9.5
@@ -154,27 +153,8 @@ e.cancelBubble=true;}};
 /** jquery tmpl plugin */
 (function(a){var r=a.fn.domManip,d="_tmplitem",q=/^[^<]*(<[\w\W]+>)[^>]*$|\{\{\! /,b={},f={},e,p={key:0,data:{}},h=0,c=0,l=[];function g(e,d,g,i){var c={data:i||(d?d.data:{}),_wrap:d?d._wrap:null,tmpl:null,parent:d||null,nodes:[],calls:u,nest:w,wrap:x,html:v,update:t};e&&a.extend(c,e,{nodes:[],parent:d});if(g){c.tmpl=g;c._ctnt=c._ctnt||c.tmpl(a,c);c.key=++h;(l.length?f:b)[h]=c}return c}a.each({appendTo:"append",prependTo:"prepend",insertBefore:"before",insertAfter:"after",replaceAll:"replaceWith"},function(f,d){a.fn[f]=function(n){var g=[],i=a(n),k,h,m,l,j=this.length===1&&this[0].parentNode;e=b||{};if(j&&j.nodeType===11&&j.childNodes.length===1&&i.length===1){i[d](this[0]);g=this}else{for(h=0,m=i.length;h<m;h++){c=h;k=(h>0?this.clone(true):this).get();a.fn[d].apply(a(i[h]),k);g=g.concat(k)}c=0;g=this.pushStack(g,f,i.selector)}l=e;e=null;a.tmpl.complete(l);return g}});a.fn.extend({tmpl:function(d,c,b){return a.tmpl(this[0],d,c,b)},tmplItem:function(){return a.tmplItem(this[0])},template:function(b){return a.template(b,this[0])},domManip:function(d,l,j){if(d[0]&&d[0].nodeType){var f=a.makeArray(arguments),g=d.length,i=0,h;while(i<g&&!(h=a.data(d[i++],"tmplItem")));if(g>1)f[0]=[a.makeArray(d)];if(h&&c)f[2]=function(b){a.tmpl.afterManip(this,b,j)};r.apply(this,f)}else r.apply(this,arguments);c=0;!e&&a.tmpl.complete(b);return this}});a.extend({tmpl:function(d,h,e,c){var j,k=!c;if(k){c=p;d=a.template[d]||a.template(null,d);f={}}else if(!d){d=c.tmpl;b[c.key]=c;c.nodes=[];c.wrapped&&n(c,c.wrapped);return a(i(c,null,c.tmpl(a,c)))}if(!d)return[];if(typeof h==="function")h=h.call(c||{});e&&e.wrapped&&n(e,e.wrapped);j=a.isArray(h)?a.map(h,function(a){return a?g(e,c,d,a):null}):[g(e,c,d,h)];return k?a(i(c,null,j)):j},tmplItem:function(b){var c;if(b instanceof a)b=b[0];while(b&&b.nodeType===1&&!(c=a.data(b,"tmplItem"))&&(b=b.parentNode));return c||p},template:function(c,b){if(b){if(typeof b==="string")b=o(b);else if(b instanceof a)b=b[0]||{};if(b.nodeType)b=a.data(b,"tmpl")||a.data(b,"tmpl",o(b.innerHTML));return typeof c==="string"?(a.template[c]=b):b}return c?typeof c!=="string"?a.template(null,c):a.template[c]||a.template(null,q.test(c)?c:a(c)):null},encode:function(a){return(""+a).split("<").join("&lt;").split(">").join("&gt;").split('"').join("&#34;").split("'").join("&#39;")}});a.extend(a.tmpl,{tag:{tmpl:{_default:{$2:"null"},open:"if($notnull_1){_=_.concat($item.nest($1,$2));}"},wrap:{_default:{$2:"null"},open:"$item.calls(_,$1,$2);_=[];",close:"call=$item.calls();_=call._.concat($item.wrap(call,_));"},each:{_default:{$2:"$index, $value"},open:"if($notnull_1){$.each($1a,function($2){with(this){",close:"}});}"},"if":{open:"if(($notnull_1) && $1a){",close:"}"},"else":{_default:{$1:"true"},open:"}else if(($notnull_1) && $1a){"},html:{open:"if($notnull_1){_.push($1a);}"},"=":{_default:{$1:"$data"},open:"if($notnull_1){_.push($.encode($1a));}"},"!":{open:""}},complete:function(){b={}},afterManip:function(f,b,d){var e=b.nodeType===11?a.makeArray(b.childNodes):b.nodeType===1?[b]:[];d.call(f,b);m(e);c++}});function i(e,g,f){var b,c=f?a.map(f,function(a){return typeof a==="string"?e.key?a.replace(/(<\w+)(?=[\s>])(?![^>]*_tmplitem)([^>]*)/g,"$1 "+d+'="'+e.key+'" $2'):a:i(a,e,a._ctnt)}):e;if(g)return c;c=c.join("");c.replace(/^\s*([^<\s][^<]*)?(<[\w\W]+>)([^>]*[^>\s])?\s*$/,function(f,c,e,d){b=a(e).get();m(b);if(c)b=j(c).concat(b);if(d)b=b.concat(j(d))});return b?b:j(c)}function j(c){var b=document.createElement("div");b.innerHTML=c;return a.makeArray(b.childNodes)}function o(b){return new Function("jQuery","$item","var $=jQuery,call,_=[],$data=$item.data;with($data){_.push('"+a.trim(b).replace(/([\\'])/g,"\\$1").replace(/[\r\t\n]/g," ").replace(/\$\{([^\}]*)\}/g,"{{= $1}}").replace(/\{\{(\/?)(\w+|.)(?:\(((?:[^\}]|\}(?!\}))*?)?\))?(?:\s+(.*?)?)?(\(((?:[^\}]|\}(?!\}))*?)\))?\s*\}\}/g,function(m,l,j,d,b,c,e){var i=a.tmpl.tag[j],h,f,g;if(!i)throw"Template command not found: "+j;h=i._default||[];if(c&&!/\w$/.test(b)){b+=c;c=""}if(b){b=k(b);e=e?","+k(e)+")":c?")":"";f=c?b.indexOf(".")>-1?b+c:"("+b+").call($item"+e:b;g=c?f:"(typeof("+b+")==='function'?("+b+").call($item):("+b+"))"}else g=f=h.$1||"null";d=k(d);return"');"+i[l?"close":"open"].split("$notnull_1").join(b?"typeof("+b+")!=='undefined' && ("+b+")!=null":"true").split("$1a").join(g).split("$1").join(f).split("$2").join(d?d.replace(/\s*([^\(]+)\s*(\((.*?)\))?/g,function(d,c,b,a){a=a?","+a+")":b?")":"";return a?"("+c+").call($item"+a:d}):h.$2||"")+"_.push('"})+"');}return _;")}function n(c,b){c._wrap=i(c,true,a.isArray(b)?b:[q.test(b)?b:a(b).html()]).join("")}function k(a){return a?a.replace(/\\'/g,"'").replace(/\\\\/g,"\\"):null}function s(b){var a=document.createElement("div");a.appendChild(b.cloneNode(true));return a.innerHTML}function m(o){var n="_"+c,k,j,l={},e,p,i;for(e=0,p=o.length;e<p;e++){if((k=o[e]).nodeType!==1)continue;j=k.getElementsByTagName("*");for(i=j.length-1;i>=0;i--)m(j[i]);m(k)}function m(j){var p,i=j,k,e,m;if(m=j.getAttribute(d)){while(i.parentNode&&(i=i.parentNode).nodeType===1&&!(p=i.getAttribute(d)));if(p!==m){i=i.parentNode?i.nodeType===11?0:i.getAttribute(d)||0:0;if(!(e=b[m])){e=f[m];e=g(e,b[i]||f[i],null,true);e.key=++h;b[h]=e}c&&o(m)}j.removeAttribute(d)}else if(c&&(e=a.data(j,"tmplItem"))){o(e.key);b[e.key]=e;i=a.data(j.parentNode,"tmplItem");i=i?i.key:0}if(e){k=e;while(k&&k.key!=i){k.nodes.push(j);k=k.parent}delete e._ctnt;delete e._wrap;a.data(j,"tmplItem",e)}function o(a){a=a+n;e=l[a]=l[a]||g(e,b[e.parent.key+n]||e.parent,null,true)}}}function u(a,d,c,b){if(!a)return l.pop();l.push({_:a,tmpl:d,item:this,data:c,options:b})}function w(d,c,b){return a.tmpl(a.template(d),c,b,this)}function x(b,d){var c=b.options||{};c.wrapped=d;return a.tmpl(a.template(b.tmpl),b.data,c,b.item)}function v(d,c){var b=this._wrap;return a.map(a(a.isArray(b)?b.join(""):b).filter(d||"*"),function(a){return c?a.innerText||a.textContent:a.outerHTML||s(a)})}function t(){var b=this.nodes;a.tmpl(null,null,null,this).insertBefore(b[0]);a(b).remove()}})(jQuery)
 
-//title changer
-$(function() {
-    if ( $('.name').length > 1 ) {
-        $(window).bind('scroll resize', function(){
-            var y = $(window).scrollTop()
-            var title = ''
 
-            $('.name').each (function() {
-                var offset = $(this).offset().top;
-                if (offset > y + window.innerHeight) return false;
-                title = $('a', this).text();
-                if (offset > y) return false;
-            })
-
-            if (title) { document.title = title + ' | vxsx.ru' }
-        })
-    }
-})
-
-
-//prettify.js
+//prettify.js - modified
 window.PR_SHOULD_USE_CONTINUATION=true;window.PR_TAB_WIDTH=8;window.PR_normalizedHtml=window.PR=window.prettyPrintOne=window.prettyPrint=void 0;window._pr_isIE6=function(){var y=navigator&&navigator.userAgent&&navigator.userAgent.match(/\bMSIE ([678])\./);y=y?+y[1]:false;window._pr_isIE6=function(){return y};return y};
 (function(){function y(b){return b.replace(L,"&amp;").replace(M,"&lt;").replace(N,"&gt;")}function H(b,f,i){switch(b.nodeType){case 1:var o=b.tagName.toLowerCase();f.push("<",o);var l=b.attributes,n=l.length;if(n){if(i){for(var r=[],j=n;--j>=0;)r[j]=l[j];r.sort(function(q,m){return q.name<m.name?-1:q.name===m.name?0:1});l=r}for(j=0;j<n;++j){r=l[j];r.specified&&f.push(" ",r.name.toLowerCase(),'="',r.value.replace(L,"&amp;").replace(M,"&lt;").replace(N,"&gt;").replace(X,"&quot;"),'"')}}f.push(">");
 for(l=b.firstChild;l;l=l.nextSibling)H(l,f,i);if(b.firstChild||!/^(?:br|link|img)$/.test(o))f.push("</",o,">");break;case 3:case 4:f.push(y(b.nodeValue));break}}function O(b){function f(c){if(c.charAt(0)!=="\\")return c.charCodeAt(0);switch(c.charAt(1)){case "b":return 8;case "t":return 9;case "n":return 10;case "v":return 11;case "f":return 12;case "r":return 13;case "u":case "x":return parseInt(c.substring(2),16)||c.charCodeAt(1);case "0":case "1":case "2":case "3":case "4":case "5":case "6":case "7":return parseInt(c.substring(1),
@@ -203,10 +183,10 @@ hashComments:true,cStyleComments:true,verbatimStrings:true}),["cs"]);u(x({keywor
 cStyleComments:true}),["java"]);u(x({keywords:"break continue do else for if return while case done elif esac eval fi function in local set then until ",hashComments:true,multiLineStrings:true}),["bsh","csh","sh"]);u(x({keywords:"break continue do else for if return while and as assert class def del elif except exec finally from global import in is lambda nonlocal not or pass print raise try with yield False True None ",hashComments:true,multiLineStrings:true,tripleQuotedStrings:true}),["cv","py"]);
 u(x({keywords:"caller delete die do dump elsif eval exit foreach for goto if import last local my next no our print package redo require sub undef unless until use wantarray while BEGIN END ",hashComments:true,multiLineStrings:true,regexLiterals:true}),["perl","pl","pm"]);u(x({keywords:"break continue do else for if return while alias and begin case class def defined elsif end ensure false in module next nil not or redo rescue retry self super then true undef unless until when yield BEGIN END ",hashComments:true,
 multiLineStrings:true,regexLiterals:true}),["rb"]);u(x({keywords:"break continue do else for if return while auto case char const default double enum extern float goto int long register short signed sizeof static struct switch typedef union unsigned void volatile catch class delete false import new operator private protected public this throw true try typeof debugger eval export function get null set undefined var with Infinity NaN ",cStyleComments:true,regexLiterals:true}),["js"]);u(B([],[[A,/^[\s\S]+/]]),
-["regex"]);window.PR_normalizedHtml=H;window.prettyPrintOne=function(b,f){var i={f:b,e:f};U(i);return i.a};window.prettyPrint=function(b){function f(){for(var t=window.PR_SHOULD_USE_CONTINUATION?j.now()+250:Infinity;q<o.length&&j.now()<t;q++){var p=o[q];if(p.className&&p.className.indexOf("prettyprint")>=0){var c=p.className.match(/\blang-(\w+)\b/);if(c)c=c[1];for(var d=false,a=p.parentNode;a;a=a.parentNode)if((a.tagName==="pre"||a.tagName==="code"||a.tagName==="xmp")&&a.className&&a.className.indexOf("prettyprint")>=
-0){d=true;break}if(!d){a=p;if(null===K){d=document.createElement("PRE");d.appendChild(document.createTextNode('<!DOCTYPE foo PUBLIC "foo bar">\n<foo />'));K=!/</.test(d.innerHTML)}if(K){d=a.innerHTML;if("XMP"===a.tagName)d=y(d);else{a=a;if("PRE"===a.tagName)a=true;else if(ka.test(d)){var k="";if(a.currentStyle)k=a.currentStyle.whiteSpace;else if(window.getComputedStyle)k=window.getComputedStyle(a,null).whiteSpace;a=!k||k==="pre"}else a=true;a||(d=d.replace(/(<br\s*\/?>)[\r\n]+/g,"$1").replace(/(?:[\r\n]+[ \t]*)+/g,
+["regex"]);window.PR_normalizedHtml=H;window.prettyPrintOne=function(b,f){var i={f:b,e:f};U(i);return i.a};window.prettyPrint=function(b){function f(){for(var t=window.PR_SHOULD_USE_CONTINUATION?j.now()+250:Infinity;q<o.length&&j.now()<t;q++){var p=o[q];if(1 || (p.className&&p.className.indexOf("prettyprint")>=0)){var c=p.className.match(/\blang-(\w+)\b/);if(c)c=c[1];for(var d=false,a=p.parentNode;a;a=a.parentNode)if((a.tagName==="pre"/* ||a.tagName==="code"||a.tagName==="xmp" */)/* &&a.className&&a.className.indexOf("prettyprint")>=
+0*/){d=true;break}if(!d){a=p;if(null===K){d=document.createElement("PRE");d.appendChild(document.createTextNode('<!DOCTYPE foo PUBLIC "foo bar">\n<foo />'));K=!/</.test(d.innerHTML)}if(K){d=a.innerHTML;if("XMP"===a.tagName)d=y(d);else{a=a;if("PRE"===a.tagName)a=true;else if(ka.test(d)){var k="";if(a.currentStyle)k=a.currentStyle.whiteSpace;else if(window.getComputedStyle)k=window.getComputedStyle(a,null).whiteSpace;a=!k||k==="pre"}else a=true;a||(d=d.replace(/(<br\s*\/?>)[\r\n]+/g,"$1").replace(/(?:[\r\n]+[ \t]*)+/g,
 " "))}d=d}else{d=[];for(a=a.firstChild;a;a=a.nextSibling)H(a,d);d=d.join("")}d=d.replace(/(?:\r\n?|\n)$/,"");m={f:d,e:c,b:p};U(m);if(p=m.a){c=m.b;if("XMP"===c.tagName){d=document.createElement("PRE");for(a=0;a<c.attributes.length;++a){k=c.attributes[a];if(k.specified)if(k.name.toLowerCase()==="class")d.className=k.value;else d.setAttribute(k.name,k.value)}d.innerHTML=p;c.parentNode.replaceChild(d,c)}else c.innerHTML=p}}}}if(q<o.length)setTimeout(f,250);else b&&b()}for(var i=[document.getElementsByTagName("pre"),
-document.getElementsByTagName("code"),document.getElementsByTagName("xmp")],o=[],l=0;l<i.length;++l)for(var n=0,r=i[l].length;n<r;++n)o.push(i[l][n]);i=null;var j=Date;j.now||(j={now:function(){return(new Date).getTime()}});var q=0,m;f()};window.PR={combinePrefixPatterns:O,createSimpleLexer:B,registerLangHandler:u,sourceDecorator:x,PR_ATTRIB_NAME:"atn",PR_ATTRIB_VALUE:"atv",PR_COMMENT:C,PR_DECLARATION:"dec",PR_KEYWORD:R,PR_LITERAL:J,PR_NOCODE:V,PR_PLAIN:z,PR_PUNCTUATION:E,PR_SOURCE:P,PR_STRING:A,
+/*document.getElementsByTagName("code"),*/document.getElementsByTagName("xmp")],o=[],l=0;l<i.length;++l)for(var n=0,r=i[l].length;n<r;++n)o.push(i[l][n]);i=null;var j=Date;j.now||(j={now:function(){return(new Date).getTime()}});var q=0,m;f()};window.PR={combinePrefixPatterns:O,createSimpleLexer:B,registerLangHandler:u,sourceDecorator:x,PR_ATTRIB_NAME:"atn",PR_ATTRIB_VALUE:"atv",PR_COMMENT:C,PR_DECLARATION:"dec",PR_KEYWORD:R,PR_LITERAL:J,PR_NOCODE:V,PR_PLAIN:z,PR_PUNCTUATION:E,PR_SOURCE:P,PR_STRING:A,
 PR_TAG:"tag",PR_TYPE:S}})()
 
 PR.registerLangHandler(
@@ -255,3 +235,211 @@ PR.registerLangHandler(
          [PR.PR_STRING, /^[^\)\"\']+/]
         ]),
     ['css-str']);
+
+//twitter button
+window.twttr=window.twttr||{};
+(function(){function m(c){c=c||window.event;for(var a=c.target||c.srcElement,b,d;a&&a.nodeName.toLowerCase()!=="a";)a=a.parentNode;if(a&&a.nodeName.toLowerCase()==="a"&&a.href)if(b=a.href.match(t)){b=Math.round(u/2-n/2);d=0;if(o>k)d=Math.round(o/2-k/2);window.open(a.href,"intent",v+",width="+n+",height="+k+",left="+b+",top="+d);c.returnValue=false;c.preventDefault&&c.preventDefault()}}function p(c){var a,b;for(b in c){a=w.apply(this,b.split("."));for(var d=0,e;e=a[d];d++)(new c[b](e)).render()}}function w(c,
+a){var b,d=[],e,g;try{if(document.querySelectorAll)d=document.querySelectorAll(c+"."+a);else if(document.getElementsByClassName){b=document.getElementsByClassName(a);for(e=0;g=b[e];e++)g.tagName.toLowerCase()==c&&d.push(g)}else{b=document.getElementsByTagName(c);var h=RegExp("\\b"+a+"\\b");for(e=0;g=b[e];e++)g.className.match(h)&&d.push(g)}}catch(j){}return d}function q(c){for(var a=[],b=0,d=c.length;b<d;b++)a.push(c[b]);return a}var t=/twitter\.com(\:\d{2,4})?\/intent\/(\w+)/,v="scrollbars=yes,resizable=yes,toolbar=no,location=yes",
+n=550,k=420,o=screen.height,u=screen.width;if(!window.__twitterIntentHandler){if(document.addEventListener)document.addEventListener("click",m,false);else document.attachEvent&&document.attachEvent("onclick",m);window.__twitterIntentHandler=true}if(!twttr.widgets)twttr.widgets={};if(!twttr.widgets.host)twttr.widgets.host="platform{i}.twitter.com";if(typeof twttr.widgets.ignoreSSL==="undefined")twttr.widgets.ignoreSSL=false;var x=document.title,y=encodeURI(location.href),l=0,z={en:{vertical:[55,62],
+horizontal:[110,20],none:[55,20]},de:{vertical:[67,62],horizontal:[110,20],none:[67,20]},es:{vertical:[64,62],horizontal:[110,20],none:[64,20]},fr:{vertical:[65,62],horizontal:[110,20],none:[65,20]},it:{vertical:[55,62],horizontal:[110,20],none:[55,20]},ko:{vertical:[55,62],horizontal:[110,20],none:[55,20]},ja:{vertical:[80,62],horizontal:[130,20],none:[80,20]},ru:{vertical:[68,62],horizontal:[110,20],none:[68,20]},tr:{vertical:[66,62],horizontal:[110,20],none:[66,20]},pt:{vertical:[66,62],horizontal:[110,
+20],none:[66,20]}},A={en:1,de:1,es:1,fr:1,it:1,ko:1,ja:1,ru:1,tr:1,pt:1},B={vertical:1,horizontal:1,none:1},C={en:"Twitter For Websites: Tweet Button",de:"Twitter f\u00fcr Webseiten: Tweet-Schaltfl\u00e4che",es:"Twi`tter para sitios web: Bot\u00f3n para Twittear",fr:'Twitter pour votre site web : bouton "Tweeter"',it:"Tweeter per i siti web: Bottone Tweet",ja:"WEB\u30b5\u30a4\u30c8\u5411\u3051Twitter: \u30c4\u30a4\u30fc\u30c8\u30dc\u30bf\u30f3",ko:"Twitter \uc6f9\ubc84\uc804: \ud2b8\uc717 \ubc84\ud2bc",
+pt:"Twitter para websites: Bot\u00e3o de Tweet",ru:"\u0422\u0432\u0438\u0442\u0442\u0435\u0440 \u0434\u043b\u044f \u0432\u0435\u0431-\u0441\u0430\u0439\u0442\u0430: \u043a\u043d\u043e\u043f\u043a\u0430 \u00ab\u0422\u0432\u0438\u0442\u043d\u0443\u0442\u044c\u00bb",tr:"Web siteleri i\u00e7in Twitter: Tweetle Butonu"};twttr.TweetButton=function(c){this.originElement=c;var a=c.href.split("?")[1],b;if(a){b={};var d,e;if(a){a=a.split("&");for(e=0;d=a[e];e++){d=d.split("=");if(d.length==2)b[decodeURIComponent(d[0])]=
+decodeURIComponent(d[1])}}b=b}else b={};b=b;a=b.count||c.getAttribute("data-count");e=b.lang||c.getAttribute("data-lang");this.text=b.text||c.getAttribute("data-text")||x;if(!(d=b.via)){if(!(d=c.getAttribute("data-via")))a:{var g=document.getElementsByTagName("a"),h=document.getElementsByTagName("link");d=/\bme\b/;var j=/^https?\:\/\/(www\.)?twitter.com\/(#!\/)?([a-zA-Z0-9_]+)\/?$/;g=q(g).concat(q(h));for(var f,i,r=0;i=g[r];r++){h=i.getAttribute("rel");i=i.getAttribute("href");if(h&&i&&h.match(d)&&
+(f=i.match(j))){d=f[3];break a}}d=void 0}d=d}this.via=d;if(!(f=b.url)){if(!(f=c.getAttribute("data-url"))){a:{f=document.getElementsByTagName("link");for(d=0;j=f[d];d++)if(j.getAttribute("rel")=="canonical"){f=j.getAttribute("href");d=void 0;if(f.match(/^https?:\/\//))f=f;else{d=location.host;if(location.port.length>0)d+=":"+location.port;f=f.match(/^\/[^\/]/)?[location.protocol,"//",d,f].join(""):[location.protocol,"//",d,location.pathname.replace(/\/([^\/]+)$/,"/"),f].join("")}break a}f=null}f=
+f||y}f=f}this.url=f;this.statusID=b.status_id||c.getAttribute("data-status-id");this.related=b.related||c.getAttribute("data-related");this.counturl=b.counturl||c.getAttribute("data-counturl");this.searchlink=b.searchlink||c.getAttribute("data-searchlink");this.placeid=b.placeid||c.getAttribute("data-placeid");B[a]||(a="horizontal");this.count=a;A[e]||(e="en");this.lang=e};(function(c,a){for(var b in a)c[b]=a[b];return c})(twttr.TweetButton.prototype,{parameters:function(){var c;c=this.statusID?{status_id:this.statusID}:
+{text:this.text,url:this.url,via:this.via,related:this.related,count:this.count,lang:this.lang,counturl:this.counturl,searchlink:this.searchlink,placeid:this.placeid};c._=(new Date).getTime();var a=[],b;for(b in c)c[b]!==null&&typeof c[b]!=="undefined"&&a.push(encodeURIComponent(b).replace(/\+/g,"%2B")+"="+encodeURIComponent(c[b]).replace(/\+/g,"%2B"));return a.sort().join("&")},render:function(){if(!twttr.TweetButton.fragment){twttr.TweetButton.fragment=document.createElement("div");twttr.TweetButton.fragment.innerHTML=
+'<iframe allowtransparency="true" frameborder="0" scrolling="no" tabindex="0" class="twitter-share-button twitter-count-'+this.count+'"></iframe>'}var c=twttr.TweetButton.fragment.firstChild.cloneNode(false),a=(window.location.protocol.match(/s\:$/)||0)&&!twttr.widgets.ignoreSSL?"https":"http",b=twttr.widgets.host.replace("{i}",l++);if(l==3)l=0;c.src=a+"://"+b+"/widgets/tweet_button.html?"+this.parameters();a=z[this.lang][this.count];c.style.width=a[0]+"px";c.style.height=a[1]+"px";c.title=C[this.lang];
+(a=this.originElement.parentNode)&&a.replaceChild(c,this.originElement)}});var s={"a.twitter-share-button":twttr.TweetButton};p(s);(function(c){var a,b,d=function(){document.readyState=="complete"&&a()},e,g=function(){try{document.documentElement.doScroll("left");a()}catch(h){}};if(window.addEventListener){a=function(){if(!b){b=true;c()}window.removeEventListener("DOMContentLoaded",a,false);window.removeEventListener("load",a,false)};window.addEventListener("DOMContentLoaded",a,false);window.addEventListener("load",
+a,false)}else if(window.attachEvent){e=window.setInterval(g,13);a=function(){if(!b){b=true;c()}window.clearInterval(e);window.detachEvent("onreadystatechange",d);window.detachEvent("onload",a)};window.attachEvent("onreadystatechange",d);window.attachEvent("onload",a)}})(function(){p(s)})})();
+
+
+//================================================ CUSTOM =============================================================
+	// функция для выбора 
+	// верного набора названий временных отрезков
+	function whichlabels (number) { 
+		var c = number % 100;
+		if(c > 6 && c < 21 ) return 0;//6 лет но 21 год и так далее
+		else {
+			c = (c % 10);
+			if (c == 1) return 1;
+			else if( c > 1 && c < 5) return 2;
+			else return 0;
+		};
+	}
+	
+	function timeSince(postDate) { //postDate - unix timestamp
+		var i, j, name, name2, seconds, seconds2, count, count2,
+			chunks = [ // временные отрезки
+				[60 * 60 * 24 * 365], //год
+				[60 * 60 * 24 * 7], //неделя и так далее
+				[60 * 60 * 24],
+				[60 * 60],
+				[1  * 60],
+				[1  * 1]
+			],
+			labels = [
+				[ 'лет',  'недель', 'дней', 'часов', 'минут',  'секунд'  ],
+				[ 'год',  'неделя', 'день', 'час',   'минуту', 'секунду' ],
+				[ 'года', 'недели', 'дня',  'часа',  'минуты', 'секунды' ]
+			],
+			today = Math.round(new Date().getTime() / 1000), //unix timestamp для сегодняшнего дня
+			since = today - parseInt(postDate, 10); //временной отрезок в секундах который нам и нужно "перефразировать"
+	
+			for (i = 0, j = chunks.length; i < j; i++) 
+			{
+				seconds = chunks[i];
+				
+				if ((count = Math.floor(since / seconds)) != 0)  // находим наибольший целый временной отрезок, который нам подходит
+				{
+					name = labels[whichlabels(count)][i]; //находим для него подходящее название
+					break;								  //и выходим из цикла
+				}
+			}
+			
+			print = count + ' ' + name; //заносим в искомую строку
+			
+			if (i + 1 < j - 1 ) //чтоб 	если первыми были выбраны минуты - кол-во секунд не показывать
+			{
+				seconds2 = chunks[i + 1]; //следующий временной отрезов
+				
+				//since - (seconds * count) - остаток после вычета первого отрезка
+				if ((count2 = Math.floor((since - (seconds * count)) / seconds2)) != 0) 
+				{
+					name2 = labels[whichlabels(count2)][i+1];
+					print += ' ' + count2 + ' ' + name2;
+				}
+			}
+			
+			print += " назад"; // :)
+			return print;
+	}
+	
+$(function() {
+//title changer
+    if ( $('.name').length > 1 ) {
+        $(window).bind('scroll resize', function(){
+            var y = $(window).scrollTop()
+            var title = ''
+
+
+            if (title) { document.title = title + ' | vxsx.ru' }
+        })
+    }
+
+
+
+
+    var respond = $('#respond'),
+        comments = $('#comments');
+
+    respond.length > 0 && $(window).bind('scroll resize', function(){
+        var offsetTop  = comments.offset().top,
+            cHeight    = comments.height(),
+            offsetLeft = respond.offset().left,
+            rWidth     = respond.width(),
+            rHeight    = respond.height(),
+            w          = $(this);
+
+
+        if ( (w.scrollTop() > offsetTop ) &&
+             (w.height() > rHeight ) &&
+             (w.width() > 980 ) ) {
+            if ( w.scrollTop() + rHeight >= offsetTop + cHeight ) {
+                respond.css({
+                    'position' : 'relative',
+                    'left'     : '0',
+                    'width'    : '40%',
+                    'top'      : cHeight - rHeight
+                })
+            } else {
+                respond.css({
+                    'width'    : rWidth,
+                    'position' : 'fixed',
+                    'top'      : '0',
+                    'left'     : offsetLeft
+                })
+            }
+        } else {
+            respond.css({
+                'position' : 'relative',
+                'left'     : '0',
+                'width'    : '40%', //original respond width
+                'top'      : '0'
+            })
+        }
+    })
+	
+
+    if ($('#comment-text').length > 0 ) {
+        var os, k, submit;
+
+        updatesubmit = function () {
+          $('[type="submit"]').attr('disabled', (
+            (/^ *$/.test( $('#comment-name').val())  )  ||
+            (/^ *$/.test( $('#comment-email').val()) ) ||
+            (/^ *$/.test( $('#comment-text').val())  )
+          ) )
+        }	
+
+        updatesubmit ()
+
+        $('[required]').bind('input blur cut copy paste keypress', updatesubmit)
+
+
+        os = $('.keyboard-shortcut').data('os');
+
+        $('#comment-text').keydown(function (event) {
+            if ((13 == event.keyCode) && (os == 'win') && (!$('[type="submit"]').attr('disabled'))) { //or linux, but who cares :)
+                if (event.ctrlKey) {
+                    $('#commentform').submit()
+                }
+            }
+
+            if (os == 'mac') {
+                if ((91 == event.keyCode) || (93 == event.keyCode)) { //left and right command
+                    k = 1;
+                }
+            }
+
+            if ((13 == event.keyCode) && (os == 'mac') && ( k == 1 ) && (!$('[type="submit"]').attr('disabled'))) {
+                $('#commentform').submit()
+            }
+        })
+
+        $('#comment-text').keyup(function (event) {
+            if ((91 == event.keyCode) || (93 == event.keyCode)) {
+                k = 0;
+            }
+        })
+    }
+
+    $.ajax({
+        type : 'GET',
+        dataType : 'jsonp',
+        url : 'http://search.twitter.com/search.json?q=from:vxsx&rpp=1',
+
+        success : function(tweets) {
+           var twitter = $.map(tweets.results, function(obj, index) {
+              return {
+                 tweet : obj.text.replace(	/(^|\s)(?:#([\d\w_]+)|@([\d\w_]{1,15}))|(https?:\/\/[^\s"]+[\d\w_\-\/])|([a-z0-9!#$%&\'*+\/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&\'*+\/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?)/gi,
+                            function( all, space, hashtag, username, link, email ) {
+                                var res = '<a href="mailto:' + email + '">' + email + "</a>";
+                                hashtag && (res = space + '<a href="http://search.twitter.com/search?q=%23' + hashtag + '">#' + hashtag + "</a>");
+                                username && (res = space + '<a href="http://twitter.com/' + username + '">@' + username + "</a>");
+                                link && (res = '<a href="' + encodeURI(decodeURI(link.replace(/<[^>]*>/g, ""))) + '">' + link + "</a>");
+                                return res;
+                            }
+                        ),
+                 time : timeSince(new Date(obj.created_at).getTime()/1000)
+              };
+           });
+
+           $('#tweets').tmpl(twitter).appendTo('#last-tweet');
+        }
+     })
+
+     console.log('1')
+	
+})
+
+prettyPrint();

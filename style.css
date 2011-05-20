@@ -98,7 +98,23 @@ button {  width: auto; overflow: visible; }
 	min-height:100%;
     height: auto !important;
     height:100%;
-
+    max-width: 1440px;
+}
+.ie6 .vxsx {
+    zoom:1;
+	maxwidth:expression(
+		function(t){
+			var w = t.parentNode.scrollWidth;
+			if (w != t.w) {
+				t.w = w;
+				var max = parseInt(t.currentStyle['max-width'], 10);
+				t.style.width = 'auto';
+				if (t.scrollWidth > max) {
+					t.style.width = max;
+				}
+			}
+		}(this)
+	);
 }
 
 .blog-header {
@@ -226,13 +242,11 @@ figcaption {padding-left: 2em;font-size: 0.8em;}
 						background: #eee;
 						counter-reset: code 0;
 						margin: 0 0 1em -1em;
-						padding: 1em 0;
+						padding: 1em 0 1em 1em;
 						white-space: pre-wrap;
 						word-wrap: break-word;
 					}
-                    .no-js pre {
-                        padding-left: 1em;
-                    }
+                    
 					blockquote {
 						background: #eee;
 
@@ -259,7 +273,7 @@ figcaption {padding-left: 2em;font-size: 0.8em;}
 					
 						code {
 							background: #eee;
-							padding: 0.1em 0.4em;
+							padding: 0.3em 0.4em 0.2em;
 						}
 						
 											
@@ -302,15 +316,10 @@ figcaption {padding-left: 2em;font-size: 0.8em;}
 		
 
 					#comments .comments pre {
-						padding: 1em;
-						margin-left: 0em;
+						margin-left: -1em;
 						word-wrap: break-word;
 					}
 					
-						#comments .comments	pre code:before {
-							content:'';
-						}
-
 		#comments .comments blockquote {
 			margin-left: 0em;
 		}
@@ -338,16 +347,20 @@ figcaption {padding-left: 2em;font-size: 0.8em;}
 				float: left;
 				clear: left;
 /* 				margin-top: 2em; */
-				line-height: 120%;
-				
+                line-height: 150%;
+                font-weight: bold;
 			}
 			
+			#comments .comments time {
+                font-weight: normal;
+            }
 			#comments .comments div {
 				/* width: 75%; */
 				margin-left: 25%;
 				/* margin-top: 2em; */
 				position: relative;
-				line-height: 120%;
+                line-height: 150%;
+                font-weight: normal;
 			}			
 			
 
@@ -370,6 +383,7 @@ figcaption {padding-left: 2em;font-size: 0.8em;}
 			#comments aside .rules	{
 				font-size: 0.8em;
 				margin: 2em 0 2em;
+                line-height: 120%;
 			}
 			#comments aside textarea {
 				resize: none;
@@ -776,6 +790,7 @@ pre {
 .linenums {
     list-style-type: none; /* decimal-leading-zero; */
     /* list-style-position: inside;*/
+    margin-left: -1em;
 }
     .linenums li {
         /* padding-left: 1em;*/
@@ -860,8 +875,8 @@ pre {
   .blog-header { padding-right: 5%; }
   .blog-posts .posts {	width: 100%;}
 pre, blockquote {
-	margin-left: -5.6%;
-	margin-right: -5.6%;
+	margin-left: -5.6% !important;
+	margin-right: -5.6% !important;
 }
 	.blog-posts aside {	float: none;width: 100%;font-size: 1.4em;line-height: 150%;	padding-bottom: 2em;}
 	#last-tweet { display: none; }
@@ -876,6 +891,8 @@ pre, blockquote {
 	.me { display: none; }
 	.timeline-page {margin-left: 0;}
 	.keyboard-shortcut {display:none}
+    #comments .comments footer { float: none; margin-bottom: 1em; }
+    #comments .comments div { margin-left: 0px; };
 }
  
  
@@ -884,8 +901,8 @@ pre, blockquote {
   html { -webkit-text-size-adjust:none; -ms-text-size-adjust:none; } 
 
 pre, blockquote {
-	margin-left: -5.6%;
-	margin-right: -5.6%;
+	margin-left: -5.6% !important;
+	margin-right: -5.6% !important;
 }
   .blog-header { padding-right: 5%; }  
   .blog-posts .posts {	width: 100%;}

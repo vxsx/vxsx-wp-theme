@@ -10,61 +10,6 @@
 
 #	$oddcomment = 'alt';
 ?>
-<script type="text/javascript">
-var os, k, submit;
-	
-
-$(function(){
-	
-	updatesubmit = function () {
-      $('[type="submit"]').attr('disabled', (
-        (/^ *$/.test( $('#comment-name').val())  )  ||
-        (/^ *$/.test( $('#comment-email').val()) ) ||
-        (/^ *$/.test( $('#comment-text').val())  )
-      ) )
-	}	
-  
-	updatesubmit ()
- 
-	$('[required]').bind('input blur cut copy paste keypress', updatesubmit)
-  
-
-
-	os = $('.keyboard-shortcut').data('os');
-
-	$('#respond').stickyfloat({position: 'relative', duration: 0});
-	
-	$('#comment-text').keydown(function (event) {
-		if ((13 == event.keyCode) && (os == 'win') && (!$('[type="submit"]').attr('disabled'))) { //or linux, but who cares :)
-			//if (event.stopPropagation) event.stopPropagation ()
-				if (event.ctrlKey) {
-					$('#commentform').submit()
-				}
-		}
-
-		if (os == 'mac') {
-			if ((91 == event.keyCode) || (93 == event.keyCode)) { //left and right command
-				k = 1;
-			}
-		}
-
-		if ((13 == event.keyCode) && (os == 'mac') && ( k == 1 ) && (!$('[type="submit"]').attr('disabled'))) {
-			$('#commentform').submit()
-		}
-	})
-
-	$('#comment-text').keyup(function (event) {
-		if ((91 == event.keyCode) || (93 == event.keyCode)) {
-			k = 0;
-		}
-	})
-
-
-})
-
-
-
-</script>
 <?php if ($comments) : ?>
 <h2 class="comments">Комментарии:</h2>
 <?php else: ?>
@@ -129,7 +74,7 @@ $(function(){
 		
 		<?php if ('open' == $post->comment_status) { ?>
 		<aside id="respond">
-			<form action="<?php echo get_option(’siteurl’); ?>/wp-comments-post.php" method="post" id="commentform">
+			<form action="<?php echo get_option(’siteurl’); ?>/wordpress/wp-comments-post.php" method="post" id="commentform">
 				<div class="subscribe">
 					<?php show_subscription_checkbox(); ?>
 				</div>
@@ -155,7 +100,7 @@ $(function(){
 				<?php } else { ?>
 					<span class="keyboard-shortcut" data-os="win">Ctrl + Enter</span>
 				<?php } ?>
-				<div class="rules">Все что не разрешено - запрещено, а разрешено немного - a, em, strong, blockquote. <!-- А все остальное мне до пизды, потому что я ебал этот ваш водпресс :(--></div>
+				<div class="rules">Все что не разрешено - запрещено, а разрешено немного - a, em, strong, blockquote.<br>Код оборачиваем в &lt;pre&gt;&lt;/pre&gt;  <!-- А все остальное мне до пизды, потому что я ебал этот ваш водпресс :(--></div>
 			</form>
 		</aside>
 		<?php } ?>

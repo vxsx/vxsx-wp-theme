@@ -15,10 +15,7 @@
     <link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>?1" type="text/css" media="screen">
 	<title>vxsx.ru</title>
 	<?php //need to install all in one seo pack ?>
-	<script type="text/javascript" src="/wordpress/wp-content/themes/vxsx/js/jquery-1.6.1.min.js"></script>
-    <script type="text/javascript" src="/wordpress/wp-content/themes/vxsx/js/plugins.js"></script>
 	<script type="text/javascript" src="/wordpress/wp-content/themes/vxsx/js/modernizr-1.5.min.js"></script>
-    <script defer src="http://platform.twitter.com/widgets.js" type="text/javascript"></script>
 	<!-- или просто сделать криейт элемент -->
 	
 	<link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="<?php bloginfo('rss2_url'); ?>" />
