@@ -99,6 +99,7 @@ button {  width: auto; overflow: visible; }
     height: auto !important;
     height:100%;
     max-width: 1440px;
+    margin: 0 auto;
 }
 .ie6 .vxsx {
     zoom:1;
