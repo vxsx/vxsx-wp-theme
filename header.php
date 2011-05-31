@@ -1,15 +1,15 @@
 <!DOCTYPE html>
-<!--[if lt IE 7 ]> <html class="no-js ie6" lang="ru-RU"> <![endif]-->
-<!--[if IE 7 ]>    <html class="no-js ie7" lang="ru-RU"> <![endif]-->
-<!--[if IE 8 ]>    <html class="no-js ie8" lang="ru-RU"> <![endif]-->
-<!--[if (gte IE 9)|!(IE)]><!--> <html class="no-js" lang="ru-RU"> <!--<![endif]-->
+<!--[if lt IE 7 ]> <html class="no-js ie6" lang="ru"> <![endif]-->
+<!--[if IE 7 ]>    <html class="no-js ie7" lang="ru"> <![endif]-->
+<!--[if IE 8 ]>    <html class="no-js ie8" lang="ru"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--> <html class="no-js" lang="ru"> <!--<![endif]-->
 	<meta charset="UTF-8">
 	<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	<meta name="description" content="">
 	<meta name="author" content="">
 	<meta name='yandex-verification' content='44aad9e75dda00ab' />
-	<meta name="viewport" content="width=device-width; initial-scale=1.0">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="shortcut icon" href="/favicon.ico">
 	<link rel="apple-touch-icon" href="/wordpress/wp-content/themes/vxsx/apple-touch-icon.png">
     <link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>?1" type="text/css" media="screen">

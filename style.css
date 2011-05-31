@@ -838,7 +838,12 @@ pre {
 
 
 
-
+#floating-title {
+    width: 100px;
+    position: fixed;
+    left: 10px;
+    top: 20px;
+}
 
 
 /* 

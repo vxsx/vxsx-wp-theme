@@ -316,16 +316,59 @@ a,false)}else if(window.attachEvent){e=window.setInterval(g,13);a=function(){if(
 	
 $(function() {
 //title changer
-    if ( $('.name').length > 1 ) {
-        $(window).bind('scroll resize', function(){
-            var y = $(window).scrollTop()
-            var title = ''
+	
+if ( $('.name').length > 1 ) {
+    // $('body').append('<h3 id="floating-title"></h3>');
+    h2s = $('.name');
 
-
-            if (title) { document.title = title + ' | vxsx.ru' }
+    $(window).bind('scroll resize', function(){
+        var y = $(window).scrollTop()
+        var title = ''
+	
+        $('.name').each (function() {
+            var offset = $(this).offset().top;
+            if (offset > y + window.innerHeight) return false;
+            title = $('a', this).text();
+            if (offset > y) return false;
         })
-    }
+	
+        if (title) { document.title = title + ' | vxsx.ru' }
 
+        // var c = 75;
+        // var d = null;
+        // var a = null;
+        // var b = null;
+        // $('.name a').each(function() {
+        //     var h = $(this).position()["top"] - c;
+        //     if (y < h) {
+        //         return false
+        //     }
+        //     b = h;
+        //     d = $(this).html();
+        //     var f = y - (b + c);
+        //     a = f / c;
+        //     if (a > 1) {
+        //         a = 1
+        //     }
+        //     if (a > 0.99) {
+        //         var j = $(this).nextAll("h2");
+        //         if (j.length) {
+        //             var i = j.first().position()["top"];
+        //             var g = i - y;
+        //             if (g <= c * 2) {
+        //                 a = 1 / (c - g / 2)
+        //             }
+        //         }
+        //     }
+        // });
+
+        // $("#floating-header").css({
+        //     opacity: a
+        // }).css("left", h2s.first().position()["left"] - 180 - 35).html(d)
+
+    })
+}
+	
 
 
 
@@ -413,6 +456,7 @@ $(function() {
         })
     }
 
+    //twitter widget
     $.ajax({
         type : 'GET',
         dataType : 'jsonp',
@@ -438,6 +482,19 @@ $(function() {
         }
      })
 
+
+
+
+
+
+
+
+
+
+
+
+
 })
 
 prettyPrint();
+
