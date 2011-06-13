@@ -897,7 +897,7 @@ pre, blockquote {
 	.me { display: none; }
 	.timeline-page {margin-left: 0;}
 	.keyboard-shortcut {display:none}
-    #comments .comments footer { float: none; margin-bottom: 1em; }
+    #comments .comments footer { float: none; margin-bottom: 1em; width: 100%; }
     #comments .comments div { margin-left: 0px; };
 }
  
@@ -925,6 +925,8 @@ pre, blockquote {
 	.me { display: none; }
 	.timeline-page {margin-left: 0;}
 	.keyboard-shortcut {display:none}
+    #comments .comments footer { float: none; margin-bottom: 1em; width: 100%; }
+    #comments .comments div { margin-left: 0px; };
 }
 
 
