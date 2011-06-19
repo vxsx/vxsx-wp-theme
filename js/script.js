@@ -315,57 +315,40 @@ a,false)}else if(window.attachEvent){e=window.setInterval(g,13);a=function(){if(
 	}
 	
 $(function() {
+// var scrolloff = 300;
+
 //title changer
 	
 if ( $('.name').length > 1 ) {
-    // $('body').append('<h3 id="floating-title"></h3>');
-    h2s = $('.name');
+    // if ($(window).width() > 1440) {  $('body').append('<h3 id="floating-title"></h3>');}
+
 
     $(window).bind('scroll resize', function(){
-        var y = $(window).scrollTop()
-        var title = ''
+        var y = $(window).scrollTop(), opacity, title;
 	
-        $('.name').each (function() {
+        // $('.name').each(function() {
+        //     var offset = $(this).offset().top;
+        //     if (offset > y + scrolloff ) return false;
+
+        //     opacity = Math.abs(( offset - y ) / scrolloff);
+
+        //     if ( opacity > 1 ) opacity = 1;
+        //     //do only if there are more h3's
+
+        // })
+
+        $('.name').each(function() {
             var offset = $(this).offset().top;
-            if (offset > y + window.innerHeight) return false;
-            title = $('a', this).text();
             if (offset > y) return false;
+            title = $('a', this).text();
         })
 	
         if (title) { document.title = title + ' | vxsx.ru' }
 
-        // var c = 75;
-        // var d = null;
-        // var a = null;
-        // var b = null;
-        // $('.name a').each(function() {
-        //     var h = $(this).position()["top"] - c;
-        //     if (y < h) {
-        //         return false
-        //     }
-        //     b = h;
-        //     d = $(this).html();
-        //     var f = y - (b + c);
-        //     a = f / c;
-        //     if (a > 1) {
-        //         a = 1
-        //     }
-        //     if (a > 0.99) {
-        //         var j = $(this).nextAll("h2");
-        //         if (j.length) {
-        //             var i = j.first().position()["top"];
-        //             var g = i - y;
-        //             if (g <= c * 2) {
-        //                 a = 1 / (c - g / 2)
-        //             }
-        //         }
-        //     }
-        // });
-
-        // $("#floating-header").css({
-        //     opacity: a
-        // }).css("left", h2s.first().position()["left"] - 180 - 35).html(d)
-
+        // $("#floating-title").css({
+        //     opacity: opacity,
+        //     width: $('.vxsx').position().left - 20
+        // }).text(title)
     })
 }
 	
@@ -489,7 +472,16 @@ if ( $('.name').length > 1 ) {
 
 
 
+    $('#qrcode-link').click(function(e){
+        e.preventDefault();
+        var img = $('#qrcode-img');
 
+        if ( img.is(':visible') ) {
+            img.css('display','none !important');
+        } else {
+            img.css('display','block !important');
+        }
+    })
 
 
 

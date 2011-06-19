@@ -8,12 +8,16 @@
 		<div class="arrow"></div>
 		<div class="username"><a href="http://twitter.com/vxsx">vxsx</a></div>
 	</div>
+
+    <div id="qrcode">
+        <img id="qrcode-img" src="/wordpress/wp-content/themes/vxsx/i/qrcode.gif" alt="" />
+    </div>
 	
-	<script id="tweets" type="text/x-jquery-tmpl">  
+	<script id="tweets" type="text/x-jquery-tmpl">
 	    <div class="tweet">
 	    	<p>{{html tweet}}</p>
 	    	<time>${time}</time>
-	    </div>  
-	</script>  
+	    </div>
+	</script>
 </aside>
 

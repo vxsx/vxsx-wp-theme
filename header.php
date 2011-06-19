@@ -12,7 +12,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="shortcut icon" href="/favicon.ico">
 	<link rel="apple-touch-icon" href="/wordpress/wp-content/themes/vxsx/apple-touch-icon.png">
-    <link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>?1" type="text/css" media="screen">
+    <link rel="stylesheet" href="<? php bloginfo('stylesheet_url'); ?>" >
 	<title>vxsx.ru</title>
 	<?php //need to install all in one seo pack ?>
 	<script type="text/javascript" src="/wordpress/wp-content/themes/vxsx/js/modernizr-1.5.min.js"></script>
@@ -29,6 +29,6 @@
 <body>
 	<div class="vxsx">
 		<header class="blog-header">
-			<h1><a href="/">Блог ни о чём</a></h1>
+			<h1><a href="/">Блог ни о чём</a><a href="#" id="qrcode-link">QR-code</a></h1>
 		</header>
 		<section class="blog-posts clearfix">

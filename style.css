@@ -165,6 +165,16 @@ figcaption {padding-left: 2em;font-size: 0.8em;}
 		width: 100%;
 		display: block;
 	}
+    #qrcode {
+        margin: 30px 0px;
+    }
+        #qrcode-link  {
+            display: none;
+            float: right;
+            margin-bottom: 10px;
+            text-decoration: none;
+            border-bottom: 1px dashed;
+        }
 	
 	.blog-posts aside .copy {
 		text-align: right;
@@ -839,102 +849,64 @@ pre {
 
 
 #floating-title {
-    width: 100px;
     position: fixed;
-    left: 10px;
-    top: 20px;
+    text-align: right;
+    top: 10px;
+    left: 20px;
+    font-size: 20px;
 }
-
-
-/* 
- * print styles
- * inlined to avoid required HTTP connection www.phpied.com/delay-loading-your-print-css/ 
-
-@media print {
-  * { background: transparent !important; color: #444 !important; text-shadow: none; }
-
-  a, a:visited { color: #444 !important; text-decoration: underline; }
-
-  a:after { content: " (" attr(href) ")"; } 
-
-  abbr:after { content: " (" attr(title) ")"; }
-  
-  .ir a:after { content: ""; }  / Don't show links for images 
-  
-  pre, blockquote { border: 1px solid #999; page-break-inside: avoid; }
-  
-  img { page-break-inside: avoid; }
-
-  @page { margin: 0.5cm; }
-
-  p, h2, h3 { orphans: 3; widows: 3; }
-
-  h2, h3{ page-break-after: avoid; }
-}
- */
 
 
 
 @media (max-width:980px) and (orientation:portrait) { 
     /* iPad */
-  html { -webkit-text-size-adjust:none; -ms-text-size-adjust:none; } 
-  .blog-header { padding-right: 5%; }
-  .blog-posts .posts {	width: 100%;}
-pre, blockquote {
-	margin-left: -5.6% !important;
-	margin-right: -5.6% !important;
-}
-	.blog-posts aside {	float: none;width: 100%;font-size: 1.4em;line-height: 150%;	padding-bottom: 2em;}
-	#last-tweet { display: none; }
-	.blog-posts .blog-post footer .social-buttons {	margin-left: 0;	float: right;}
-	.blog-posts .blog-post footer .social-buttons iframe {width: 95px;}
-	#respond {top:0 !important;	clear: left;float: none;width: 100% !important;border-top: 1px dashed #ccc;margin-top: 1em;	}
- 	#comments .comments-wrap {float: left;width: 100%;margin-bottom: 1em;}
-	.nocomments 
-	, .nevercomments
-	{width: 100%;float: none;}
-	.nocomments:after {	content: ' \2193'}
-	.me { display: none; }
-	.timeline-page {margin-left: 0;}
-	.keyboard-shortcut {display:none}
+    html { -webkit-text-size-adjust:none; -ms-text-size-adjust:none; } 
+    .blog-header { padding-right: 5%; }
+    .blog-posts .posts {	width: 100%;}
+    pre, blockquote { margin-left: -5.6% !important; margin-right: -5.6% !important; }
+    .blog-posts aside {	float: none;width: 100%;font-size: 1.4em;line-height: 150%;	padding-bottom: 2em;}
+    #last-tweet { display: none; }
+    .blog-posts .blog-post footer .social-buttons {	margin-left: 0;	float: right;}
+    .blog-posts .blog-post footer .social-buttons iframe {width: 95px;}
+    #respond {top:0 !important;	clear: left;float: none;width: 100% !important;border-top: 1px dashed #ccc;margin-top: 1em;	}
+    #comments .comments-wrap {float: left;width: 100%;margin-bottom: 1em;}
+    .nocomments , .nevercomments {width: 100%;float: none;}
+    .nocomments:after {	content: ' \2193'}
+    .me { display: none; }
+    .timeline-page {margin-left: 0;}
+    .keyboard-shortcut {display:none}
     #comments .comments footer { float: none; margin-bottom: 1em; width: 100%; }
     #comments .comments div { margin-left: 0px; };
+    #qrcode-img { display: none; }
+    #qrcode-link { display: inline; }
 }
- 
- 
-@media screen and (max-device-width: 480px)  {
-  /* iPhone */
-  html { -webkit-text-size-adjust:none; -ms-text-size-adjust:none; } 
 
-pre, blockquote {
-	margin-left: -5.6% !important;
-	margin-right: -5.6% !important;
-}
-  .blog-header { padding-right: 5%; }  
-  .blog-posts .posts {	width: 100%;}
-	.blog-posts aside {	float: none;width: 100%;font-size: 1.4em;line-height: 120%;padding-bottom: 2em;}
-	#last-tweet { display: none; }
-	.blog-posts .blog-post footer .social-buttons {	margin-left: 0;	float: right;}
-	.blog-posts .blog-post footer .social-buttons iframe {width: 95px;}
- 	#respond {	top:0;clear: left;float: none;width: 100% !important;border-top: 1px dashed #ccc;margin-top: 1em;}
- 	#comments .comments-wrap {float: left;width: 100%;	margin-bottom: 1em;	}
-	.nocomments 
-	, .nevercomments
-	{	width: 100%;float: none;}
-	.nocomments:after {	content: ' \2193'}
-	.me { display: none; }
-	.timeline-page {margin-left: 0;}
-	.keyboard-shortcut {display:none}
+
+@media screen and (max-device-width: 480px)  {
+    /* iPhone */
+    html { -webkit-text-size-adjust:none; -ms-text-size-adjust:none; } 
+    pre, blockquote { margin-left: -5.6% !important; margin-right: -5.6% !important; }
+    .blog-header { padding-right: 5%; }  
+    .blog-posts .posts {	width: 100%;}
+    .blog-posts aside {	float: none;width: 100%;font-size: 1.4em;line-height: 120%;padding-bottom: 2em;}
+    #last-tweet { display: none; }
+    .blog-posts .blog-post footer .social-buttons {	margin-left: 0;	float: right;}
+    .blog-posts .blog-post footer .social-buttons iframe {width: 95px;}
+    #respond {	top:0;clear: left;float: none;width: 100% !important;border-top: 1px dashed #ccc;margin-top: 1em;}
+    #comments .comments-wrap {float: left;width: 100%;	margin-bottom: 1em;	}
+    .nocomments , .nevercomments {	width: 100%;float: none;}
+    .nocomments:after {	content: ' \2193'}
+    .me { display: none; }
+    .timeline-page {margin-left: 0;}
+    .keyboard-shortcut {display:none}
     #comments .comments footer { float: none; margin-bottom: 1em; width: 100%; }
     #comments .comments div { margin-left: 0px; };
+    #qrcode-link { display: inline; }
+    #qrcode-img { display: none; }
 }
 
 
 @media screen and (view-mode:minimized) {
-        body {
-            background: url(/wordpress/wp-content/themes/vxsx/apple-touch-icon.png) no-repeat center center white;
-        }
-        .vxsx {
-            display: none;
-        }
+    body { background: url(/wordpress/wp-content/themes/vxsx/apple-touch-icon.png) no-repeat center center white; }
+    .vxsx { display: none; }
 }
