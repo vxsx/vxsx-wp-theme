@@ -424,6 +424,8 @@ figcaption {padding-left: 2em;font-size: 0.8em;}
 	.blog-footer p {
 		font-size: 1.4em;
 		padding: 20px 5% 0;
+        margin: 0 auto;
+        max-width: 1400px;
 	}
 	
 	.nocomments 
