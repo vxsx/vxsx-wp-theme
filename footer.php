@@ -3,7 +3,9 @@
 	</div>
 
 	<footer class="blog-footer">
-		<p>&copy; 2010 &mdash; 2011, Вадим Сикора </p>
+        <div>
+            <p>&copy; 2010&mdash;2011, Вадим Сикора </p>
+        </div>
 	</footer>
 
 <script type="text/javascript" src="/wordpress/wp-content/themes/vxsx/js/jquery-1.6.1.min.js"></script>
