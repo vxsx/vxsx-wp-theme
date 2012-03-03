@@ -488,6 +488,19 @@ if ( $('.name').length > 1 ) {
     })
 
 
+    if ($('.fluid-video').length > 0) {
+        $('.fluid-video').each(function (){
+            var $orig = $(this),
+                aspectRatio = $orig.attr('height') / $orig.attr('width');
+
+            $(window).resize(function() {
+                var wrapWidth = $orig.parent().width();
+
+                $orig.width(wrapWidth).height(wrapWidth * aspectRatio);
+            }).trigger("resize");
+        });
+    }
+
 
 
 })
