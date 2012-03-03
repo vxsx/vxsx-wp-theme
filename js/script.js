@@ -443,27 +443,31 @@ if ( $('.name').length > 1 ) {
     $.ajax({
         type : 'GET',
         dataType : 'jsonp',
-        url : 'http://search.twitter.com/search.json?q=from:vxsx&rpp=1',
+        // url : 'http://search.twitter.com/search.json?q=from:vxsx&rpp=1',
+        url : 'http://api.twitter.com/1/statuses/user_timeline.json?screen_name=vxsx&exclude_replies=true&trim_user=true&include_rts=true&count=1',
+
 
         success : function(tweets) {
-           var twitter = $.map(tweets.results, function(obj, index) {
-              return {
-                 tweet : obj.text.replace(	/(^|\s)(?:#([\d\w_]+)|@([\d\w_]{1,15}))|(https?:\/\/[^\s"]+[\d\w_\-\/])|([a-z0-9!#$%&\'*+\/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&\'*+\/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?)/gi,
-                            function( all, space, hashtag, username, link, email ) {
-                                var res = '<a href="mailto:' + email + '">' + email + "</a>";
-                                hashtag && (res = space + '<a href="http://search.twitter.com/search?q=%23' + hashtag + '">#' + hashtag + "</a>");
-                                username && (res = space + '<a href="http://twitter.com/' + username + '">@' + username + "</a>");
-                                link && (res = '<a href="' + encodeURI(decodeURI(link.replace(/<[^>]*>/g, ""))) + '">' + link + "</a>");
-                                return res;
-                            }
-                        ),
-                 time : timeSince(new Date(obj.created_at).getTime()/1000)
-              };
-           });
+            var twitter = $.map(tweets, function(obj, index) {
+                return {
+                    tweet : obj.text.replace(/(^|\s)(?:#([\d\w_]+)|@([\d\w_]{1,15}))|(https?:\/\/[^\s"]+[\d\w_\-\/])|([a-z0-9!#$%&\'*+\/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&\'*+\/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?)/gi,
+                        function( all, space, hashtag, username, link, email ) {
+                            var res = '<a href="mailto:' + email + '">' + email + "</a>";
 
-           $('#tweets').tmpl(twitter).appendTo('#last-tweet');
+                            hashtag && (res = space + '<a href="http://search.twitter.com/search?q=%23' + hashtag + '">#' + hashtag + "</a>");
+                            username && (res = space + '<a href="http://twitter.com/' + username + '">@' + username + "</a>");
+                            link && (res = '<a href="' + encodeURI(decodeURI(link.replace(/<[^>]*>/g, ""))) + '">' + link + "</a>");
+
+                            return res;
+                        }
+                    ),
+                    time : timeSince(new Date(obj.created_at).getTime()/1000)
+                };
+            });
+
+            $('#tweets').tmpl(twitter).appendTo('#last-tweet');
         }
-     })
+    });
 
 
 
